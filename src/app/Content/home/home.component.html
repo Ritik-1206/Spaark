@@ -1,0 +1,123 @@
+<div class="main">
+    <section class="home-image">
+        <div class="info">
+            <div class="content">
+                <span class="quantity">500+</span>
+                <span>Candidates Placed</span>
+            </div>
+            <div class="content">
+                <span class="quantity">100+</span>
+                <span>Global Employers</span>
+            </div>
+            <div class="content">
+                <span class="quantity">100%</span>
+                <span>Visa Success Rate</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="heading">
+            <h2><span style="color: black;">Services</span> We Provide</h2>
+        </div>
+        <div class="service-body">
+            <div class="service">
+                <div class="description">
+                    <div class="details">
+                        <div class="title"><span>Job Placements</span></div>
+                        <div class="content">
+                            Embarking on an international career journey can be both exciting and challenging. At Spaark Overseas , we understand the aspirations and dreams of individuals seeking employment opportunities abroad. Our Abroad Job Consultant Service is designed to guide you through the intricate process of securing a job overseas, ensuring a smooth transition into an enriching professional experience.
+                        </div>
+                        <div class="enquire"><button>Enquire</button></div>
+                    </div>
+                </div>
+                <div class="service-image">
+                    <div class="image-wrapper"><img src="/Home/JobService.png" alt=""></div>
+                </div>
+            </div>
+            <div class="reverse-service">
+                <div class="service-image">
+                    <div class="image-wrapper"><img src="/Home/TrainingService.png" alt=""></div>
+                </div>
+                <div class="description">
+                    <div class="details">
+                        <div class="title"><span>Language Training</span></div>
+                        <div class="content">
+                            At Spaark Overseas , we offer German language training for levels A1, A2, B1, and B2, led by GOETHE-certified, C2-qualified teachers. Our online classes are flexible, designed to fit your work schedule, and include extra and doubt-clearing sessions at no additional cost. We also provide study materials like books (delivered to your address), PDFs, YouTube videos, GOETHE exam sample papers, and more. Learn German with us and thrive in a globalized world!
+                        </div>
+                        <div class="enquire"><button>Enquire</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service">
+                <div class="description">
+                    <div class="details">
+                        <div class="title"><span>Abroad Study Consultants</span></div>
+                        <div class="content">
+                            Embarking on a journey of education abroad is a transformative experience that opens doors to new perspectives, cultures, and opportunities. At Spaark Overseas  we understand the importance of quality education and the impact it can have on one's future. Our Abroad Study Consultant Service is designed to guide aspiring students through the intricate process of pursuing education in prestigious international institutions.
+                        </div>
+                        <div class="enquire"><button>Enquire</button></div>
+                    </div>
+                </div>
+                <div class="service-image">
+                    <div class="image-wrapper"><img src="/Home/Consulting.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="jobs">
+        <div class="heading">
+            <h2><span style="color: black;">Featured</span> Jobs</h2>
+            <p>We Are Well-Versed With The Different Job Opportunities</p>
+        </div>
+        <div class="job-body">
+            <div class="job-cards-container">
+                <div class="job-card" *ngFor="let job of jobs">
+                    <img [src]="job.imageUrl" [alt]="job.title" class="job-image" />
+                    <h3>{{ job.title }}</h3>
+                    <div class="job-details">
+                        <p>📍 {{ job.location }}</p>
+                        <p>💼 {{ job.openings }}</p>
+                        <p>🎓 {{ job.qualification }}</p>
+                    </div>
+                    <div class="job-buttons">
+                        <button class="apply-btn">APPLY</button>
+                        <button class="desc-btn">JOB DESCRIPTION</button>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more-container">
+                <button class="view-more-btn" (click)="navigateTo('jobs')">View More</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="news">
+        <div class="heading">
+            <h2><span style="color: black;">Our</span> News Feed</h2>
+        </div>
+        <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30" autoplay-delay="2500" autoplay-disable-on-interaction="false" loop="true"  breakpoints='{"640": {"slidesPerView": 1}, "768": {"slidesPerView": 2}, "1024": {"slidesPerView": 3}}'>
+            <swiper-slide><div class="news-card"><img src="/Home/news1.png" alt="News 1"></div></swiper-slide>
+            <swiper-slide><div class="news-card"><img src="/Home/news2.png" alt="News 2"></div></swiper-slide>
+            <swiper-slide><div class="news-card"><img src="/Home/news3.png" alt="News 3"></div></swiper-slide>
+            <swiper-slide><div class="news-card"><img src="/Home/news1.png" alt="News 1"></div></swiper-slide>
+            <swiper-slide><div class="news-card"><img src="/Home/news2.png" alt="News 2"></div></swiper-slide>
+            <swiper-slide><div class="news-card"><img src="/Home/news3.png" alt="News 3"></div></swiper-slide>
+        </swiper-container>
+    </section>
+
+    <section class="reviews">
+        <div class="heading">
+            <h2>Client Reviews</h2>
+        </div>
+        <swiper-container class="mySwiper" pagination="true" navigation="true" pagination-clickable="true" space-between="30" autoplay-delay="2000" autoplay-disable-on-interaction="false" loop="true" breakpoints='{"640": {"slidesPerView": 1}, "768": {"slidesPerView": 2}, "1024": {"slidesPerView": 3}}'>
+            <swiper-slide *ngFor="let review of reviews">
+                <div class="carousel-item">
+                    <p class="review-text">{{ review.text }}</p>
+                    <p class="review-author">{{ review.author }}</p>
+                </div>
+            </swiper-slide>
+        </swiper-container>
+    </section>
+</div>

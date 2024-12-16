@@ -1,0 +1,34 @@
+
+  <nav (click)="onNavbarClick($event)" class="navbar">
+    <div class="wrapper">
+      <div class="logo"><img src="SpaarkLogo.png" alt="Logo"></div>
+      <input type="radio" name="slider" id="menu-btn" #menuBtn>
+      <input type="radio" name="slider" id="close-btn">
+      <ul class="nav-links">
+        <label for="close-btn" class="btn close-btn"><i class="ri-close-fill"></i></label>
+        <li class="first-item"><a (click)="navigateTo('home')">Home</a></li>
+        <li><a (click)="navigateTo('about')">About Us</a></li>
+        <li><a (click)="navigateTo('jobs')">Jobs</a></li>
+        <li><a (click)="navigateTo('internships')">Abroad Internships</a></li>
+        <li><a (click)="navigateTo('service')">Our Services</a></li>
+        <li><a (click)="navigateTo('blogs')">Blogs</a></li>
+        <li>
+          <a href="#" class="desktop-item">
+            More <i class="ri-arrow-down-s-line"></i>
+          </a>
+          <input type="checkbox" id="showDrop">
+          <label for="showDrop" class="mobile-item">
+            More <i class="ri-arrow-down-s-line"></i>
+          </label>
+          <ul class="drop-menu">
+            <li><a href="#">Privacy & Policy</a></li>
+            <li><a href="#">Why Germany?</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </li>
+      </ul>
+      <label for="menu-btn" class="btn menu-btn"><i class="ri-menu-line"></i></label>
+    </div>
+  </nav>
+  
+  
