@@ -9,27 +9,42 @@ import { Component ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class JobsComponent {
-  reviews = [
+  jobs = [
     {
-      text: 'One of the best company in India for job seeker. Thanks Spaark Overseas to help me in searching the new job.',
-      author: 'Ajeet Biswas',
+      title: 'Sales Executive',
+      location: 'Noida Sector 63',
+      openings: '20+ Openings',
+      qualification: 'Graduation',
+      imageUrl: '/Home/SalesJob.png'
     },
     {
-      text: 'I am happy to be associated with this Manpower Services. It works with utmost responsibility & care.',
-      author: 'Shweta Tamang',
+      title: 'Physiotherapy',
+      location: 'Germany',
+      openings: '10+ Openings',
+      qualification: 'Bachelors of Physical Therapy',
+      imageUrl: '/Home/PhysioJob.png'
     },
     {
-      text: 'They were just great!..the process had some hurdles, but they still came through and walked with me till now, I highly recommend them.',
-      author: 'Jaspreet Singh',
+      title: 'Nursing Staff',
+      location: 'Germany',
+      openings: '100+ Openings',
+      qualification: '12th/Graduation',
+      imageUrl: '/Home/NurseJob.png'
     },
     {
-      text: 'Excellent service with proper guidance and a friendly approach. Highly satisfied!',
-      author: 'Rahul Mehra',
+      title: 'Nursing Staff',
+      location: 'Germany',
+      openings: '100+ Openings',
+      qualification: '12th/Graduation',
+      imageUrl: '/Home/NurseJob.png'
     },
     {
-      text: 'Professional and supportive throughout my journey. Thank you!',
-      author: 'Priya Sharma',
-    },
+      title: 'Site Manager',
+      location: 'Germany',
+      openings: '10+ Openings',
+      qualification: 'MBA',
+      imageUrl: '/Home/SiteManager.png'
+    }
   ];
 
 }

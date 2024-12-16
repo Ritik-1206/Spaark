@@ -1,15 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
 .main-image{
     position: relative;
     box-sizing: border-box;
     background: url('/About/About.png') no-repeat center center/cover;
-    height: 70vh;
+    height: 60vh;
     color: #fff;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    text-align: center;
-    padding: 50px;
+    justify-content: center;
+    padding-top: 50px;
   }
   
   .main-image::before {
@@ -19,7 +23,333 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #003f64b2;
+    background: #0a4262c9;
     z-index: 1;
   }
   
+  .info {
+    position: relative;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+  }
+
+  .info h1{
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  .info span{
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .ceo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    height: auto;
+  }
+
+  .ceo .content{
+    flex: 1 1 60%;
+  }
+
+  .ceo-content{
+    padding: 20px;
+  }
+
+  .ceo-content .about{
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  .ceo-content .ceo-title{
+    font-size: 24px;
+    font-weight: 600;
+    color: #004064;
+  }
+
+  .ceo-description{
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .ceo .image {
+    flex: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ceo-image {
+    max-width: 80%;
+    border-radius: 8px;
+  }
+
+  .mission{
+    margin-top: 20px;
+  }
+
+  .mission .heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mission .heading span{
+    font-size: 35px;
+    font-weight: 600;
+    color: #004064;
+  }
+
+  .mission-content{
+    padding: 0px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mission-content .image{
+    flex: auto;
+  }
+
+  .mission-image{
+    width: 120px;
+  }
+
+  .mission-content .content{
+    flex: 1 80%;
+    padding: 20px 10px;
+  }
+
+  .recognition{
+    padding: 20px 60px;
+  }
+
+  .recognition .heading{ 
+    font-size: 30px;
+    font-weight: 600;
+    color: #004064;
+  }
+
+  .recognition .card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px;
+  }
+
+  .recognition .card .content h1{
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .recognition .card .content p{
+    flex-wrap: wrap;
+  }
+
+  .recognition .card .content{
+    flex: 1 1 60%;
+    padding: 10px 40px;
+  }
+
+  .recognition .card .image{
+    flex: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .recognition .card .image img{
+    width: 60%;
+  }
+
+  .advisory{
+    margin-top: 20px;
+  }
+
+  .advisory .heading{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    margin-bottom: 20px;
+  }
+
+  .advisory .heading span{
+    font-size: 35px;
+    font-weight: 600;
+    color: #004064;
+  }
+
+  .images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;               
+    padding: 16px;           
+  }
+  
+  .images-container .card {
+    background-color: #fff;
+    border: 1px solid rgb(214, 212, 212);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    text-align: center;
+    width: calc(25% - 26px); 
+    padding: 50px 0px;
+    max-width: 300px;       
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+  }
+  
+  .profile-image {
+    width: 70%;
+    height: auto;
+    margin-bottom: 26px;
+    border-radius: 50%;
+  }
+  
+  .member-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #004064;
+  }
+
+
+  .spaark{
+    margin-top: 40px;
+  }
+
+  .spaark .heading{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    margin-bottom: 20px;
+  }
+
+  .spaark .heading span{
+    font-size: 35px;
+    font-weight: 600;
+    color: #004064;
+  }
+
+  .spark-images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;               
+    padding: 16px;           
+  }
+  
+  .spark-images-container .card {
+    background-color: #fff;
+    border: 1px solid rgb(214, 212, 212);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    text-align: center;
+    width: calc(25% - 26px); 
+    padding: 50px 0px;
+    max-width: 300px;       
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+  }
+  
+  .spaark-image {
+    width: 70%;
+    height: auto;
+    margin-bottom: 26px;
+  }
+  
+  .employee-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #004064;
+  }
+  
+  
+  @media screen and (max-width:1200px) {
+
+   .ceo {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+   }
+  }
+
+  @media screen and (max-width:1200px) and (min-width:875px) {
+
+    .images-container .card {
+      width: calc(33% - 26px);  
+
+    }
+
+    .spark-images-container .card {
+      width: calc(33% - 26px);  
+    }
+  }
+
+  @media screen and (max-width:874px)  {
+
+    .images-container .card {
+      width: calc(70% - 10px);  
+    }
+
+    .spark-images-container .card {
+      width: calc(70% - 10px);  
+    }
+  }
+
+  @media screen and (max-width:1024px) {
+
+    .main-image{
+      padding-top: 40px;
+      padding-bottom: 40px;
+      height: auto;
+
+    }
+    .info {
+      width: 90%;
+    }
+
+    .mission-content{
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+      padding: 0px 10px;
+    }
+
+    .recognition{
+      padding: 20px 20px;
+    }
+
+    .recognition .card .content{
+      padding: 0px;
+    } 
+
+  }
+
+  @media screen and (max-width:830px) {
+
+    .recognition .body .card{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .recognition .card .image img{
+      width: 100%;
+      margin-bottom: 12px;
+    }
+  }

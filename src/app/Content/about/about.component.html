@@ -1,7 +1,142 @@
 <div class="main">
     <section class="main-image">
         <div class="info">
+            <h1>About Us</h1>
+            <span>
+                Spaark Overseas, a unit of Proask Overseas Pvt. Ltd., is a recruitment consultancy based in Noida, India, with PAN India sourcing capabilities. Our mission is to connect organizations with the right talent and help individuals achieve their career goals. We specialize in integrated recruitment solutions, sourcing candidates through professional networks, referrals, and comprehensive databases. Our experienced team efficiently fills vacancies while ensuring compliance with profile requirements.
+            </span>
+            <br>
+            <span>
+                At Spaark Overseas, we are committed to building successful careers and strong organizations, making us your trusted talent acquisition partner. We aim to be India’s leading talent solutions provider, contributing to the success of both clients and candidates.
+            </span>
+        </div>
+    </section>
+
+    <section class="ceo">
+        <div class="content">
+            <div class="ceo-content">
+                <span class="about">About</span>
+                <br>
+                <span class="ceo-title">Our CEO, Mr. Abhay Kumar</span>
+                <p class="ceo-description">
+                  Mr. Abhay Kumar, CEO of Spaark Overseas (A unit of Proask Overseas Pvt. Ltd.), comes from humble beginnings. 
+                  Raised with values of honesty, family responsibility, and respect, he learned the importance of helping others early on. 
+                  While pursuing his studies, he took on the responsibility of supporting his family, including his sister’s education and his parents’ healthcare.<br /><br />
+          
+                  With a strong work ethic, Abhay worked at Hindustan Times, Xseed Education, Girnarsoft, and Cars 24, gaining valuable experience across industries. 
+                  During his father’s healthcare struggles, he became deeply aware of the challenges faced by healthcare workers, especially physiotherapists and nurses, who suffer from poor pay, long hours, and lack of work-life balance.<br /><br />
+          
+                  Motivated by his mother’s teachings, Abhay founded Spaark Overseas to provide overseas job opportunities for healthcare professionals, 
+                  particularly in Germany and the Gulf. He ensures that candidates receive fair pay, respect, and work-life balance, personally visiting employers and facilities to verify conditions.<br /><br />
+          
+                  Abhay’s philosophy is simple: "We are not just creating jobs, we are changing lives." He believes that by placing candidates abroad, 
+                  we not only transform their lives but also positively impact their families for generations. 
+                  His commitment to honesty, transparency, and care for every candidate and employee drives the mission of Spaark Overseas.
+                </p>
+            </div>
             
+        </div>
+        <div class="image">
+            <img src="/About/Ceo.png" alt="Mr. Abhay Kumar" class="ceo-image" />
+        </div>
+    </section>
+
+    <section class="mission">
+        <div class="heading">
+            <span>Our Missions & Goals</span>
+        </div>
+        <div class="mission-content">
+                <div class="image">
+                    <img src="/About/Mission.png" alt="Mission" class="mission-image" />
+                </div>
+                <div class="content">
+                    <p>
+                        At Spaark Overseas (a unit of Proask Overseas Pvt. Ltd.), our mission is to empower individuals with the skills and opportunities needed to achieve their dream careers abroad. As a trusted job consultant, we connect talented candidates with leading employers, providing the resources and support for a successful career journey. We focus on delivering excellent consultation, matching candidates with the right employers, and ensuring transparency throughout the process. Committed to candidate satisfaction and long-term partnerships, we aim to build careers, change lives, and create lasting impact.
+                    </p>
+                </div>
+        </div>
+    </section>
+
+
+    <section class="recognition">
+        <div class="heading">
+            <span>Recognition</span>
+        </div>
+        <hr style="border: 0; border-top: 3px solid #787676; width: 100%; margin: 15px 0;">
+
+        <div class="body">
+            <div class="card">
+                <div class="content">
+                    <h1>PROASK OVERSEAS PRIVATE LIMITED - Certificate of Incorporation under the Companies Act, 2013</h1>
+                    <p>
+                        The Certificate of Incorporation is the official document that recognizes the existence of PROASK OVERSEAS PRIVATE LIMITED as a legal entity under Indian law. This certification marks the company’s compliance with the Companies Act, 2013, and its readiness to engage in lawful business activities.
+                    </p>
+                </div>
+                <div class="image">
+                    <img src="/About/Coi.png" alt="Incorporation Certificate" class="recognition-image" />
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="content">
+                    <h1>PROASK OVERSEAS PRIVATE LIMITED - Goods and Services Tax (GST) Registration</h1>
+                    <p>
+                        The GST Registration Certificate is an essential document for businesses operating in India, confirming that PROASK OVERSEAS PRIVATE LIMITED is registered to collect and remit Goods and Services Tax. It allows the company to legally conduct transactions involving goods and services across India, ensuring compliance with tax regulations.
+                    </p>
+                </div>
+                <div class="image">
+                    <img src="/About/GST.png" alt="GST Certificate" class="recognition-image" />
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="content">
+                    <h1>PROASK OVERSEAS PRIVATE LIMITED - Micro, Small, and Medium Enterprise (MSME) Registration</h1>
+                    <p>
+                        The MSME Registration is a significant milestone for PROASK OVERSEAS PRIVATE LIMITED, as it not only provides legitimacy but also opens up various opportunities for growth, funding, and business support. With MSME registration, businesses like ours can unlock government benefits and streamline operations to create more competitive, sustainable enterprises.
+                </div>
+                <div class="image">
+                    <img src="/About/MSME.png" alt="MSME Certificate" class="recognition-image" />
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="content">
+                    <h1>PROASK OVERSEAS PRIVATE LIMITED - Uttar Pradesh Labour Department Certification</h1>
+                    <p>
+                        The Shop or Commercial Establishment Registration is a mandatory requirement for businesses operating in Uttar Pradesh, ensuring compliance with local laws. It provides legal recognition to PROASK OVERSEAS PRIVATE LIMITED as a registered entity, authorized to conduct business operations under the applicable regulatory framework.
+                    </p>
+                </div>
+                <div class="image">
+                    <img src="/About/Establishment.png" alt="Establishment Certificate" class="recognition-image" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advisory">
+        <div class="heading">
+            <span>Our Advisory Board</span>
+        </div>
+        <div class="images-container">
+            <div class="card" *ngFor="let member of members">
+                <img [src]="member.image" [alt]="member.name" class="profile-image" />
+                <span class="member-name">{{ member.name }}</span>
+                <span>Member of Advisory Board</span>
+              </div>
+        </div>
+    </section>
+
+    <section class="spaark">
+        <div class="heading">
+            <span>Spaark Family</span>
+        </div>
+        <div class="spark-images-container">
+            <div class="card" *ngFor="let employee of employees">
+                <img [src]="employee.image" [alt]="employee.name" class="spaark-image" />
+                <span class="employee-name">{{ employee.name }}</span>
+                <span>{{employee.profile}}</span>
+              </div>
         </div>
     </section>
 </div>

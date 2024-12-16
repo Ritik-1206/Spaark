@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { FooterComponent } from "../../footer/footer.component";
 import { Router } from '@angular/router';
+import Swiper from 'swiper';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +12,14 @@ import { Router } from '@angular/router';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeComponent {
+  isClient = false;
 
-  constructor(private router: Router){}
+  constructor(private router: Router) {
+    if (typeof window !== 'undefined') {
+      this.isClient = true;
+    }
+  }
+  // constructor(private router: Router){}
   services = [
     {
       title: 'Job Placements',

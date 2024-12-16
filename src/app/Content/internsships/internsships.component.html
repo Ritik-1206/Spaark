@@ -1,7 +1,45 @@
 <div class="main">
     <section class="main-image">
         <div class="info">
+            <h1>Why Study Abroad?</h1>
+            <span>
+                <ul>
+                    <li>
+                        <strong>Top-tier Education:</strong> Experience academic excellence from renowned institutions worldwide.
+                    </li>
+                    <li>
+                        <strong>Cultural Immersion:</strong> Discover a new country, language, and way of life.
+                    </li>
+                    <li>
+                        <strong>Global Mindset:</strong> Develop a broader understanding of the world, enhancing your personal and professional growth.
+                    </li>
+                    <li>
+                        <strong>Career Advantages:</strong> Studying abroad opens doors to international job markets and valuable connections.
+                    </li>
+                </ul>
+            </span>
             
         </div>
     </section>
+
+
+    <section class="internships">
+        <div class="heading">
+            <span>Internship Programs</span>
+        </div>
+
+
+        <div class="internship-body">
+          <div class="internship-cards-container">
+              <div class="internship-card" *ngFor="let internship of internships">
+                  <img [src]="internship.imageUrl" [alt]="internship.title" class="internship-image" />
+                  <h3>{{ internship.title }}</h3>
+                  <div class="internship-buttons">
+                      <button class="apply-btn">Learn More</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      </section>
 </div>

@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
 .home-image{
   position: relative;
@@ -52,12 +58,13 @@
   justify-content: center;
   align-items: center;
   background-color: #ECF1FF;
-  padding: 10px;
+  padding: 7px;
 }
 
 .services .heading h2{
-  font-size: 35px;
+  font-size: 28px;
   color: #004B76;
+  font-weight: 600;
 }
 
 .service-body{
@@ -144,8 +151,9 @@
 
 
 .jobs .heading h2{
-  font-size: 35px;
+  font-size: 28px;
   color: #004B76;
+  font-weight: 600;
 }
 
 .jobs .heading p{
@@ -259,8 +267,9 @@
 }
 
 .news .heading h2{
-  font-size: 35px;
+  font-size: 30px;
   color: #004B76;
+  font-weight: 600;
 }
 
 
@@ -270,7 +279,7 @@
   margin: 0 auto;
   position: relative;
   overflow: visible;
-  padding: 40px 0px;
+  padding: 20px 0px;
 }
 
 
@@ -279,7 +288,7 @@
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  height: 350px;
+  height: 300px;
   width: 90%;
   margin: 0 auto;
   display: flex;
@@ -312,6 +321,7 @@ swiper-container::part(pagination-bullet-active) {
   background: linear-gradient(to bottom, #1e3a61, #d3d6db);
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -323,31 +333,43 @@ swiper-container::part(pagination-bullet-active) {
 }
 
 .reviews .heading h2{
-  font-size: 35px;
+  font-size: 32px;
+  font-weight: 600;
   color: #fff;
 }
 
-.mySwiper {
-  width: 80%;
+
+.mySwiper1 {
   display: flex;
-  align-items: center;
+  justify-content: center;  /* Center the slides horizontally */
+  align-items: center;      /* Center the slides vertically */
+  width: 80%;               /* Adjust based on the width you want */
+  padding-bottom: 30px;
 }
 
-.swiper-slide {
+.mySwiper1 .swiper-slide {
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  text-align: center;       
+}
+
+.review-card{
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 250px;
+  width: 80%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  width: 100%;
-  max-width: 300px; /* Optional: Adjust slide width */
-  margin: 0 auto;
+  align-items: center;
 }
 
 .carousel-item {
   background-color: white;
   padding: 15px;
-  border-radius: 10px;
-  width: 250px;
-  height: 200px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -356,7 +378,7 @@ swiper-container::part(pagination-bullet-active) {
 }
 
 .review-text {
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   line-height: 1.5;
   margin-bottom: 10px;
@@ -366,7 +388,7 @@ swiper-container::part(pagination-bullet-active) {
 }
 
 .review-author {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   color: #1e3a61;
 } 

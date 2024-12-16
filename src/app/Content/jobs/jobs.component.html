@@ -1,7 +1,41 @@
 <div class="main">
   <section class="main-image">
-      <div class="info">
-          
-      </div>
-  </section>
+    <div class="info">
+        <h1>International Jobs</h1>
+        <span>
+          Embark on a journey with our global job opportunities, where each role is a stepping stone to shaping your dream career. Join a community of achievers—over 200 of our candidates are thriving in international roles, and more than 300 are honing their skills through specialized training programs. Your next big adventure starts here! 
+        </span>
+        
+    </div>
+</section>
+
+<section class="search-container">
+  <input type="text" class="search-input" placeholder="Search by profile and Location">
+  <button class="search-button">Search</button>
+</section>
+
+<section class="jobs">
+  <div class="job-body">
+    <div class="job-cards-container">
+        <div class="job-card" *ngFor="let job of jobs">
+            <img [src]="job.imageUrl" [alt]="job.title" class="job-image" />
+            <h3>{{ job.title }}</h3>
+            <div class="job-details">
+                <p>📍 {{ job.location }}</p>
+                <p>💼 {{ job.openings }}</p>
+                <p>🎓 {{ job.qualification }}</p>
+            </div>
+            <div class="job-buttons">
+                <button class="apply-btn">APPLY</button>
+                <button class="desc-btn">JOB DESCRIPTION</button>
+            </div>
+        </div>
+    </div>
+    <div class="view-more-container">
+        <button class="view-more-btn">View More</button>
+    </div>
+</div>
+
+</section>
+
 </div>
