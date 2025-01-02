@@ -1,0 +1,44 @@
+{
+    "navbar" :{
+        "home": "Home",
+        "aboutus": "About Us",
+        "jobs": "Jobs",
+        "internships": "Abroad Internships",
+        "services": "Our Services",
+        "blogs": "Blogs",
+        "more": "More",
+        "privacypolicy": "Privacy & Policy",
+        "whygermany": "Why Germany?",
+        "contactus": "Contact Us"
+    },
+    "about" :{
+        "title": "About Us",
+        "description1": "Spaark Overseas, a unit of Proask Overseas Pvt. Ltd., is a recruitment consultancy based in Noida, India, with PAN India sourcing capabilities. Our mission is to connect organizations with the right talent and help individuals achieve their career goals. We specialize in integrated recruitment solutions, sourcing candidates through professional networks, referrals, and comprehensive databases. Our experienced team efficiently fills vacancies while ensuring compliance with profile requirements.",
+        "description2": "At Spaark Overseas, we are committed to building successful careers and strong organizations, making us your trusted talent acquisition partner. We aim to be India's leading talent solutions provider, contributing to the success of both clients and candidates.",
+        "ceo-name": "Our CEO, Mr. Abhay Kumar",
+        "ceo-info1": "Mr. Abhay Kumar, CEO of Spaark Overseas (A unit of Proask Overseas Pvt. Ltd.), comes from humble beginnings. Raised with values of honesty, family responsibility, and respect, he learned the importance of helping others early on. While pursuing his studies, he took on the responsibility of supporting his family, including his sister's education and his parents' healthcare.",
+        "ceo-info2": "With a strong work ethic, Abhay worked at Hindustan Times, Xseed Education, Girnarsoft, and Cars 24, gaining valuable experience across industries. During his father's healthcare struggles, he became deeply aware of the challenges faced by healthcare workers, especially physiotherapists and nurses, who suffer from poor pay, long hours, and lack of work-life balance.",
+        "ceo-info3": "Motivated by his mother's teachings, Abhay founded Spaark Overseas to provide overseas job opportunities for healthcare professionals, particularly in Germany and the Gulf. He ensures that candidates receive fair pay, respect, and work-life balance, personally visiting employers and facilities to verify conditions.",
+        "ceo-info4": "Abhay's philosophy is simple: \"We are not just creating jobs, we are changing lives.\" He believes that by placing candidates abroad, we not only transform their lives but also positively impact their families for generations. His commitment to honesty, transparency, and care for every candidate and employee drives the mission of Spaark Overseas.",
+        "mission": "Our Missions & Goals",
+        "mission-desc": "At Spaark Overseas (a unit of Proask Overseas Pvt. Ltd.), our mission is to empower individuals with the skills and opportunities needed to achieve their dream careers abroad. As a trusted job consultant, we connect talented candidates with leading employers, providing the resources and support for a successful career journey. We focus on delivering excellent consultation, matching candidates with the right employers, and ensuring transparency throughout the process. Committed to candidate satisfaction and long-term partnerships, we aim to build careers, change lives, and create lasting impact.",
+        "certificates": {
+            "Certificate1Title": "PROASK OVERSEAS PRIVATE LIMITED - Certificate of Incorporation under the Companies Act, 2013",
+            "Certificate1Description": "The Certificate of Incorporation is the official document that recognizes the existence of PROASK OVERSEAS PRIVATE LIMITED as a legal entity under Indian law. This certification marks the company's compliance with the Companies Act, 2013, and its readiness to engage in lawful business activities.",
+            "Certificate2Title": "PROASK OVERSEAS PRIVATE LIMITED - Goods and Services Tax (GST) Registration",
+            "Certificate2Description": "The GST Registration Certificate is an essential document for businesses operating in India, confirming that PROASK OVERSEAS PRIVATE LIMITED is registered to collect and remit Goods and Services Tax. It allows the company to legally conduct transactions involving goods and services across India, ensuring compliance with tax regulations.",
+            "Certificate3Title": "PROASK OVERSEAS PRIVATE LIMITED - Micro, Small, and Medium Enterprise (MSME) Registration",
+            "Certificate3Description": "The MSME Registration is a significant milestone for PROASK OVERSEAS PRIVATE LIMITED, as it not only provides legitimacy but also opens up various opportunities for growth, funding, and business support. With MSME registration, businesses like ours can unlock government benefits and streamline operations to create more competitive, sustainable enterprises.",
+            "Certificate4Title": "PROASK OVERSEAS PRIVATE LIMITED - Uttar Pradesh Labour Department Certification",
+            "Certificate4Description": "The Shop or Commercial Establishment Registration is a mandatory requirement for businesses operating in Uttar Pradesh, ensuring compliance with local laws. It provides legal recognition to PROASK OVERSEAS PRIVATE LIMITED as a registered entity, authorized to conduct business operations under the applicable regulatory framework."
+          }
+    },
+    "blogs" : {
+        "title": "Blogs",
+        "description1": "Studying abroad opens doors to new experiences, cultures, and countless opportunities. Our blog is your ultimate resource for everything related to education overseas. Whether you're just starting your research or preparing for your adventure, you'll find expert tips, practical guides, scholarship opportunities, and advice on securing jobs and internships abroad.",
+        "description2": "From choosing the right program to navigating visas, budgeting, student life, career growth, and landing internships or jobs, our content will guide you every step of the way.Explore our blog and start your journey toward a world-class education—and a successful career—today!"
+    }
+    
+}
+
+

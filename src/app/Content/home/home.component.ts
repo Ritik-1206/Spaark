@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { FooterComponent } from "../../footer/footer.component";
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import Swiper from 'swiper';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -14,12 +15,23 @@ import Swiper from 'swiper';
 export class HomeComponent {
   isClient = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+    private route: ActivatedRoute, 
+    private titleService: Title, 
+    private metaService: Meta
+  ) {
     if (typeof window !== 'undefined') {
       this.isClient = true;
     }
   }
-  // constructor(private router: Router){}
+
+  ngOnInit() {
+    // Use bracket notation to access dynamic keys in route data
+    const routeData = this.route.snapshot.data;
+    this.titleService.setTitle(routeData['title']);  // Use ['title'] to access
+    this.metaService.updateTag({ name: 'description', content: routeData['description'] });  // Use ['description']
+  }
+
   services = [
     {
       title: 'Job Placements',
@@ -70,6 +82,35 @@ export class HomeComponent {
     }
   ];
 
+  social_media = [
+    {
+      title: 'Facebook',
+      icon_image: '/Footer/facebook.png',
+      imageUrl: '/Home/facebook.png'
+    },
+    {
+      title: 'Physiotherapy',
+      location: 'Germany',
+      openings: '10+ Openings',
+      qualification: 'Bachelors of Physical Therapy',
+      imageUrl: '/Home/PhysioJob.png'
+    },
+    {
+      title: 'Nursing Staff',
+      location: 'Germany',
+      openings: '100+ Openings',
+      qualification: '12th/Graduation',
+      imageUrl: '/Home/NurseJob.png'
+    },
+    {
+      title: 'Site Manager',
+      location: 'Germany',
+      openings: '10+ Openings',
+      qualification: 'MBA',
+      imageUrl: '/Home/SiteManager.png'
+    }
+  ];
+
   reviews = [
     {
       text: 'One of the best company in India for job seeker. Thanks Spaark Overseas to help me in searching the new job.',
@@ -95,7 +136,9 @@ export class HomeComponent {
 
   navigateTo(route?: string) {
     if (route) {
-      this.router.navigate([route]);
+      this.router.navigate([route]).then(() => {
+        window.scrollTo(0, 0);
+      });
     } else {
       console.error('Route is undefined!');
     }

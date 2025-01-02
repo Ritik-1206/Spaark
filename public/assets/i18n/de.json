@@ -1,0 +1,43 @@
+{
+
+    "navbar" :{
+        "home": "Startseite",
+        "aboutus": "Über uns",
+        "jobs": "Jobs",
+        "internships": "Praktika im Ausland",
+        "services": "Unsere Dienstleistungen",
+        "blogs": "Blogs",
+        "more": "Mehr",
+        "privacypolicy": "Datenschutz & Richtlinien",
+        "whygermany": "Warum Deutschland?",
+        "contactus": "Kontaktiere uns"
+    },
+    "about" :{
+        "title": "Über uns",
+        "description1": "Spaark Overseas, eine Einheit von Proask Overseas Pvt. Ltd., ist eine Personalberatung mit Sitz in Noida, Indien, und bietet landesweite Beschaffungsmöglichkeiten. Unsere Mission ist es, Organisationen mit den richtigen Talenten zu verbinden und Einzelpersonen dabei zu helfen, ihre Karriereziele zu erreichen. Wir sind auf integrierte Rekrutierungslösungen spezialisiert und finden Kandidaten über professionelle Netzwerke, Empfehlungen und umfassende Datenbanken. Unser erfahrenes Team besetzt Stellen effizient und stellt sicher, dass alle Anforderungen an das Profil erfüllt werden.",
+        "description2": "Bei Spaark Overseas setzen wir uns dafür ein, erfolgreiche Karrieren und starke Organisationen aufzubauen, wodurch wir Ihr vertrauenswürdiger Partner für Talentakquise sind. Wir haben das Ziel, der führende Anbieter von Talentlösungen in Indien zu werden und sowohl den Erfolg unserer Kunden als auch der Kandidaten zu fördern.",
+        "ceo-name": "Herr Abhay Kumar, CEO von Spaark Overseas",
+        "ceo-info1": "Herr Abhay Kumar, CEO von Spaark Overseas (eine Einheit von Proask Overseas Pvt. Ltd.), kommt aus bescheidenen Verhältnissen. Er wurde mit Werten wie Ehrlichkeit, familiärer Verantwortung und Respekt erzogen und lernte früh die Bedeutung, anderen zu helfen. Während seines Studiums übernahm er die Verantwortung, seine Familie zu unterstützen, einschließlich der Ausbildung seiner Schwester und der Gesundheitsversorgung seiner Eltern.",
+        "ceo-info2": "Mit einer starken Arbeitsmoral arbeitete Abhay bei Hindustan Times, Xseed Education, Girnarsoft und Cars 24, wo er wertvolle Erfahrungen in verschiedenen Branchen sammelte. Während der gesundheitlichen Probleme seines Vaters wurde ihm die schwierige Situation von Gesundheitsarbeitern, insbesondere Physiotherapeuten und Krankenschwestern, bewusst, die unter schlechten Löhnen, langen Arbeitszeiten und mangelnder Work-Life-Balance leiden.",
+        "ceo-info3": "Motiviert durch die Lehren seiner Mutter gründete Abhay Spaark Overseas, um Gesundheitsfachkräften, insbesondere in Deutschland und im Golfraum, Auslandsmöglichkeiten zu bieten. Er sorgt dafür, dass die Kandidaten fair entlohnt werden, Respekt erfahren und eine ausgewogene Work-Life-Balance haben, indem er persönlich Arbeitgeber und Einrichtungen besucht, um die Bedingungen zu überprüfen.",
+        "ceo-info4": "Abhays Philosophie ist einfach: \"Wir schaffen nicht nur Arbeitsplätze, wir verändern Leben.\" Er glaubt, dass wir durch die Platzierung von Kandidaten im Ausland nicht nur ihr Leben transformieren, sondern auch das ihrer Familien über Generationen hinweg positiv beeinflussen. Sein Engagement für Ehrlichkeit, Transparenz und Fürsorge für jeden Kandidaten und Mitarbeiter treibt die Mission von Spaark Overseas voran.",
+        "mission": "Unsere Missionen & Ziele",
+        "mission-desc": "Bei Spaark Overseas (eine Einheit von Proask Overseas Pvt. Ltd.) ist es unsere Mission, Einzelpersonen mit den Fähigkeiten und Möglichkeiten auszustatten, die sie benötigen, um ihre Traumkarrieren im Ausland zu verwirklichen. Als vertrauenswürdiger Jobberater verbinden wir talentierte Kandidaten mit führenden Arbeitgebern und bieten die Ressourcen und Unterstützung für eine erfolgreiche Karriere. Wir konzentrieren uns darauf, exzellente Beratung zu bieten, Kandidaten mit den richtigen Arbeitgebern zusammenzubringen und während des gesamten Prozesses Transparenz zu gewährleisten. Mit unserem Engagement für Kandidatenzufriedenheit und langfristige Partnerschaften wollen wir Karrieren aufbauen, Leben verändern und nachhaltige Auswirkungen schaffen.",
+        "certificates": {
+            "Certificate1Title": "PROASK OVERSEAS PRIVATE LIMITED - Gründungsurkunde gemäß Companies Act, 2013",
+            "Certificate1Description": "Das Gründungszertifikat ist das offizielle Dokument, das die Existenz von PROASK OVERSEAS PRIVATE LIMITED als juristische Person nach indischem Recht anerkennt. Diese Zertifizierung markiert die Einhaltung des Unternehmensgesetzes von 2013 und die Bereitschaft des Unternehmens, rechtmäßige Geschäftstätigkeiten aufzunehmen.",
+            "Certificate2Title": "PROASK OVERSEAS PRIVATE LIMITED - Registrierung der Waren- und Dienstleistungssteuer (GST)",
+            "Certificate2Description": "Das GST-Registrierungszertifikat ist ein wesentliches Dokument für Unternehmen, die in Indien tätig sind. Es bestätigt, dass PROASK OVERSEAS PRIVATE LIMITED registriert ist, um Waren- und Dienstleistungssteuer zu erheben und abzuführen. Es ermöglicht dem Unternehmen, rechtmäßig Transaktionen mit Waren und Dienstleistungen in ganz Indien durchzuführen und die Einhaltung der Steuervorschriften sicherzustellen.",
+            "Certificate3Title": "PROASK OVERSEAS PRIVATE LIMITED - Registrierung für kleine und mittlere Unternehmen (KMU)",
+            "Certificate3Description": "Die KMU-Registrierung ist ein wichtiger Meilenstein für PROASK OVERSEAS PRIVATE LIMITED, da sie nicht nur Legitimität verleiht, sondern auch verschiedene Möglichkeiten für Wachstum, Finanzierung und Unternehmensunterstützung eröffnet. Mit der KMU-Registrierung können Unternehmen wie unseres staatliche Vorteile nutzen und Abläufe optimieren, um wettbewerbsfähigere, nachhaltigere Unternehmen zu schaffen.",
+            "Certificate4Title": "PROASK OVERSEAS PRIVATE LIMITED - Zertifizierung durch das Arbeitsministerium Uttar Pradesh",
+            "Certificate4Description": "Die Registrierung von Geschäften oder gewerblichen Einrichtungen ist eine zwingende Anforderung für Unternehmen, die in Uttar Pradesh tätig sind, um die Einhaltung der lokalen Gesetze zu gewährleisten. Sie bietet rechtliche Anerkennung für PROASK OVERSEAS PRIVATE LIMITED als registrierte Einheit, die berechtigt ist, Geschäftstätigkeiten im Rahmen des geltenden regulatorischen Rahmens durchzuführen."
+          }
+    },
+    "blogs": {
+        "title": "Blogs",
+        "description1": "Ein Auslandsstudium öffnet Türen zu neuen Erfahrungen, Kulturen und unzähligen Möglichkeiten. Unser Blog ist Ihre ultimative Quelle für alles, was mit dem Studium im Ausland zu tun hat. Egal, ob Sie gerade mit Ihrer Recherche beginnen oder sich auf Ihr Abenteuer vorbereiten, hier finden Sie Experten-Tipps, praktische Anleitungen, Stipendienmöglichkeiten und Ratschläge zur Jobsuche und Praktika im Ausland.",
+        "description2": "Vom richtigen Studienprogramm über Visa, Budgetierung, Studentenleben und Karriereentwicklung bis hin zu Praktika und Jobmöglichkeiten – unsere Inhalte begleiten Sie auf jedem Schritt Ihres Weges. Entdecken Sie unseren Blog und starten Sie Ihre Reise zu einer erstklassigen Ausbildung und einer erfolgreichen Karriere!"
+    }    
+    
+  }

@@ -1,0 +1,96 @@
+<div class="main">
+    <section class="main-image" [ngStyle]="{'background-image': 'url(' + job.imageUrl + ')' , 'background-size': 'cover',
+    'background-position': '50% 50%;',
+    'background-repeat': 'no-repeat'}">
+        <div class="info">
+            
+            <h1>{{job.title}}</h1>
+        </div>
+    </section>
+
+    <section class="job-content">
+        <h1>Job <span class="highlight">Description</span></h1>
+
+        <div class="description">
+            <div class="description-content">
+                <div class="eligible">
+                    <div class="heading">
+                        <div class="icon">
+                            <a><img src="/assets/qualified.png" alt="Eligible"/></a>
+                        </div>
+                        <div class="header">
+                            <span>Eligibility Criteria</span>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Age Range :</strong>{{job.age}}</li>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Education :</strong>{{job.qualification}}</li>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Experience :</strong>{{job.experience}}</li>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Test Exam Required :</strong>{{job.testExamRequired}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="benefits">
+                    <div class="heading">
+                        <div class="icon">
+                            <a><img src="/assets/benefits.png" alt="Benefits"/></a>
+                        </div>
+                        <div class="header">
+                            <span>Perks and Information</span>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Openings :</strong>{{job.openings}}</li>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Salary :</strong>{{job.salary}}</li>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Work Timings :</strong>{{job.workTimings}}</li>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Program Structure :</strong>{{job.programStructure}}</li>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Accomodation & Transportation:</strong>{{job.accommodationandTransportation}}</li>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Contract :</strong>{{job.contract}}</li>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Visa Success Rate :</strong>{{job.visaSuccessRate}}</li>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Other Description :</strong> <br> {{job.otherDescription}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apply">
+                <form class="apply-form">
+                    <div class="input">
+                      <div class="form-group input-form">
+                        <label for="name">Name <span>*</span></label>
+                        <input type="text" id="name" placeholder="Enter your name" required />
+                      </div>
+                      <div class="form-group input-form" >
+                        <label for="phone">Phone No. <span>*</span></label>
+                        <input type="tel" id="phone" placeholder="Enter your number" required />
+                      </div>
+                    </div>
+            
+                    <div class="form-group" style="width: calc(80% + 50px);">
+                      <label for="name">Email <span>*</span></label>
+                      <input type="email" id="email" placeholder="Enter your email" required />
+                    </div>
+
+                    <div class="form-group" style="width: calc(80% + 50px);">
+                        <label for="name">Job Applying For <span>*</span></label>
+                        <input type="text" id="text" placeholder="Enter Job Profile" required />
+                      </div>
+            
+            
+                    <div class="form-group">
+                      <label for="cv">Upload CV <span>*</span></label>
+                      <input type="file" id="cv" required style="border: none; margin-right: 20px;"/>
+                    </div>
+                    <div class="submit-button">
+                        <button type="submit" class="submit-btn">SUBMIT</button>
+                    </div>
+                  </form>
+            </div>
+            
+        </div>
+        
+    </section>
+
+</div>

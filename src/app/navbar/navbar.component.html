@@ -6,29 +6,29 @@
       <input type="radio" name="slider" id="close-btn">
       <ul class="nav-links">
         <label for="close-btn" class="btn close-btn"><i class="ri-close-fill"></i></label>
-        <li class="first-item"><a (click)="navigateTo('home')">Home</a></li>
-        <li><a (click)="navigateTo('about')">About Us</a></li>
-        <li><a (click)="navigateTo('jobs')">Jobs</a></li>
-        <li><a (click)="navigateTo('internships')">Abroad Internships</a></li>
-        <li><a (click)="navigateTo('service')">Our Services</a></li>
-        <li><a (click)="navigateTo('blogs')">Blogs</a></li>
+        <li><a [ngClass]="{ active: activeItem === 'home' }"  (click)="setActiveItem('home'); navigateTo('home')">{{ 'navbar.home' | translate}}</a></li>
+        <li><a [ngClass]="{ active: activeItem === 'about' }"  (click)="setActiveItem('about'); navigateTo('about')">{{ 'navbar.aboutus' | translate}}</a></li>
+        <li><a [ngClass]="{ active: activeItem === 'jobs' }"  (click)="setActiveItem('jobs'); navigateTo('jobs')">{{ 'navbar.jobs' | translate}}</a></li>
+        <li><a [ngClass]="{ active: activeItem === 'internships' }" (click)="setActiveItem('internships'); navigateTo('internships')">{{ 'navbar.internships' | translate}}</a></li>
+        <li><a [ngClass]="{ active: activeItem === 'service' }" (click)="setActiveItem('service'); navigateTo('service')">{{ 'navbar.services' | translate}}</a></li>
+        <li><a [ngClass]="{ active: activeItem === 'blogs' }" (click)="setActiveItem('blogs'); navigateTo('blogs')">{{ 'navbar.blogs' | translate}}</a></li>
+        
         <li>
-          <a href="#" class="desktop-item">
-            More <i class="ri-arrow-down-s-line"></i>
+          <a [ngClass]="{ active: isDropdownActive() }" (click)="setActiveItem('more')" class="desktop-item">
+            {{ 'navbar.more' | translate}} <i class="ri-arrow-down-s-line"></i>
           </a>
           <input type="checkbox" id="showDrop">
           <label for="showDrop" class="mobile-item">
-            More <i class="ri-arrow-down-s-line"></i>
+            {{ 'navbar.more' | translate}} <i class="ri-arrow-down-s-line"></i>
           </label>
           <ul class="drop-menu">
-            <li><a href="#">Privacy & Policy</a></li>
-            <li><a href="#">Why Germany?</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a [ngClass]="{ active: activeItem === 'privacy&policy' }"  (click)="setActiveItem('privacy&policy'); navigateTo('privacy&policy')">{{ 'navbar.privacypolicy' | translate}}</a></li>
+            <li><a [ngClass]="{ active: activeItem === 'why-germany' }"  (click)="setActiveItem('why-germany'); navigateTo('why-germany')">{{ 'navbar.whygermany' | translate}}</a></li>
+            <li><a [ngClass]="{ active: activeItem === 'contact-us' }"  (click)="setActiveItem('contact-us'); navigateTo('contact-us')">{{ 'navbar.contactus' | translate}}</a></li>
           </ul>
         </li>
       </ul>
       <label for="menu-btn" class="btn menu-btn"><i class="ri-menu-line"></i></label>
     </div>
   </nav>
-  
   

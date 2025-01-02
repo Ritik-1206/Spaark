@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto Serif', serif;
+}
+
+.home-image{
+  position: relative;
+  box-sizing: border-box;
+  background: url('/Policies/Privacy.png') no-repeat center center/cover;
+  height: 60vh;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-align: center;
+  padding: 50px;
+}
+
+.home-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #003f64b2;
+  z-index: 1;
+}
+
+.privacy-policy{
+    padding: 20px 40px;
+}
+
+
+.privacy-policy h1 {
+    font-size: 2.3rem;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    border-bottom: 2px solid rgb(232, 230, 230);
+}
+  
+.privacy-policy h1 .highlight {
+    color: #004B76;
+}
+
+.privacy-policy h2 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .privacy-policy p {
+    margin: 10px 0;
+  }
+  
+  .privacy-policy ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 10px 0;
+  }
+  
+  .privacy-policy ul li {
+    margin-bottom: 5px;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+  }
+  
+  .section:last-child {
+    border-bottom: none;
+  }
+
+
+  @media screen and (max-width: 768px) {
+
+    .privacy-policy{
+      padding: 20px;
+    }
+
+  .privacy-policy h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .privacy-policy h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+
+  }

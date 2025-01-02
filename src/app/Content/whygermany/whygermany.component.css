@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.main-image{
+    position: relative;
+    box-sizing: border-box;
+    background: url('/WhyGermany/reason.png') no-repeat center center/cover;
+    height: 60vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+  }
+  
+  .main-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a4262c9;
+    z-index: 1;
+  }
+  
+  .info {
+    position: relative;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+  }
+
+  .info h1{
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  .info span{
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+
+.reason-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+  }
+  
+  .reason-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    padding: 20px 0px;
+  }
+  
+  
+  .reason-image {
+    width: 90%;
+    height: 220px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  
+  .reason-card h3 {
+    font-size: 1.4rem;
+    margin: 15px 0;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .reason-details p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .reason-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0 15px;
+  }
+  
+  .apply-btn {
+    background-color: #1c4e80;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+
+  @media screen and (max-width:1024px) {
+
+    .main-image{
+      padding-top: 40px;
+      padding-bottom: 40px;
+      height: auto;
+
+    }
+    .info {
+      width: 90%;
+    }
+  }
+
+  @media screen and (max-width:659px){
+    .reason-card {
+      width: 500px;
+    }
+  
+    .reason-image{
+      height: 220px;
+    }
+  
+  }
+
+  @media screen and (min-width:660px) and (max-width:883px){
+    .reason-card {
+      width: 270px;
+    }
+  }
+
+  @media screen and (min-width:1024px) and (max-width:1170px){
+    .reason-card {
+      width: 290px;
+    }
+  }

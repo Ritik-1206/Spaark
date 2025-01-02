@@ -17,22 +17,25 @@
 <section class="jobs">
   <div class="job-body">
     <div class="job-cards-container">
-        <div class="job-card" *ngFor="let job of jobs">
+        <div class="job-card" *ngFor="let job of displayedJobs">
             <img [src]="job.imageUrl" [alt]="job.title" class="job-image" />
-            <h3>{{ job.title }}</h3>
-            <div class="job-details">
+            <div class="title" style="padding: 0px 15px;">
+              <h3>{{ job.title }}</h3>
+            </div>
+
+            <div class="job-details" style="padding: 0px 20px;">
                 <p>📍 {{ job.location }}</p>
                 <p>💼 {{ job.openings }}</p>
                 <p>🎓 {{ job.qualification }}</p>
             </div>
             <div class="job-buttons">
-                <button class="apply-btn">APPLY</button>
-                <button class="desc-btn">JOB DESCRIPTION</button>
+                <button class="apply-btn" (click)="navigateTo('contact-us')">APPLY</button>
+                <button class="desc-btn" (click)="navigateToJobDescription(job.jobID)">JOB DESCRIPTION</button>
             </div>
         </div>
     </div>
-    <div class="view-more-container">
-        <button class="view-more-btn">View More</button>
+    <div *ngIf="showViewMoreButton" class="view-more-container">
+      <button class="view-more-btn" (click)="loadMoreJobs()">View More</button>
     </div>
 </div>
 

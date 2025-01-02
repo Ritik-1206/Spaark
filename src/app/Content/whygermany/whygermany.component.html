@@ -1,0 +1,30 @@
+
+<div class="main">
+    <section class="main-image">
+        <div class="info">
+            <h1>Why Germany?</h1>
+            <span>
+                As a diverse and open society, Germany vouches for freedom, equality and democracy and supports the rights and diversity of all individuals. What this means in practice is covered in this section, preparing you for life in Germany.
+            </span>
+            
+        </div>
+    </section>
+
+    <section class="reason">
+        <div class="reason-body">
+          <div class="reason-cards-container">
+              <div class="reason-card" *ngFor="let reason of reasons">
+                  <img [src]="reason.imageUrl" [alt]="reason.title" class="reason-image" />
+                  <h3>{{ reason.title }}</h3>
+                  <div class="reason-buttons">
+                      <button class="apply-btn">Learn More</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      </section>
+    
+</div>
+
+

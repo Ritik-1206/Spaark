@@ -1,82 +1,39 @@
-<div class="service">
-    <div class="description">
-        <div class="details">
-            <div class="title"><span>Skilling & Testing</span></div>
-            <div class="content">
-                In today’s competitive workforce, continuous learning and skill validation are key to success. At Spaark Overseas (A unit of Proask Overseas Pvt. LTD.), we offer Skilling and Testing services to help individuals and organizations stay ahead.
-            </div>    
-            <div class="sub-title"> <span>Offerings</span></div>
-            <ul class="sub-content">
-                <li>
-                    <div class="li-content">
-                        <img src="/Services/bulletpoint.png" alt="Bullet" class="custom-bullet">
-                        <span>Skill assessment to identify strengths and areas for improvement.</span>
-                    </div>
-                </li>
-               
-                <li>
-                    <div class="li-content">
-                        <img src="/Services/bulletpoint.png" alt="Bullet" class="custom-bullet">
-                        <span>Customized training programs to enhance domain-specific expertise.</span>
-                    </div></li>
-                <li>
-                    <div class="li-content">
-                        <img src="/Services/bulletpoint.png" alt="Bullet" class="custom-bullet">
-                        <span>Certification programs to validate skills, providing globally recognized credentials to boost career prospects.</span>
-                    </div></li>
-                <li>
-                    <div class="li-content">
-                        <img src="/Services/bulletpoint.png" alt="Bullet" class="custom-bullet">
-                        <span>Practical testing through real-world scenarios to ensure candidates’ job readiness.</span>
-                    </div></li>
-            </ul>
-            <div class="enquire"><button>Enquire</button></div>
+<div class="main">
+  <section class="main-image">
+      <div class="info">
+          <h1>{{ 'blogs.title' | translate }}</h1>
+          <span>
+              {{ 'blogs.description1' | translate }}
+          </span>
+          <br>
+          <span>
+              {{ 'blogs.description2' | translate }}
+            </span>
+      </div>
+  </section>
+
+  <section class="blogs">
+    <div class="content-container">
+      <div class="main-content">
+        <div class="article" *ngFor="let blog of blogs">
+          <img [src]="blog.imageUrl" alt="{{ blog.title }}" class="article-image" />
+          <div class="article-details">
+            <h2 class="article-title">{{ blog.title }}</h2>
+            <p class="article-date">{{ blog.date }}</p>
+            <p class="article-summary">{{ blog.description }}</p>
+            <a href="#" class="read-more">Read More »</a>
+          </div>
         </div>
-    </div>
-    <div class="service-image">
-        <div class="image-wrapper"><img src="/Services/Skill.png" alt=""></div>
-    </div>
-</div>
-
-
-<div class="reverse-service">
-   
-    <div class="description">
-        <div class="details">
-            <div class="title"><span>Interview Preparation</span></div>
-            <div class="content">
-                We understand the importance of thorough interview preparation and proper documentation. Our specialized services are designed to equip individuals with the skills and confidence they need to excel in job interviews.
-            </div>
-            <div class="sub-title"> <span>Offerings</span></div>
-            <ul class="sub-content">
-                <li>
-                    <div class="li-content">
-                        <img src="/Services/bulletpoint.png" alt="Bullet" class="custom-bullet">
-                        <span>Discuss your career goals and get personalized guidance from our expert counselors.</span>
-                    </div>
-                </li>
-               
-                <li>
-                    <div class="li-content">
-                        <img src="/Services/bulletpoint.png" alt="Bullet" class="custom-bullet">
-                        <span>Technical preparation with a focus on industry knowledge and language skills.</span>
-                    </div></li>
-                <li>
-                    <div class="li-content">
-                        <img src="/Services/bulletpoint.png" alt="Bullet" class="custom-bullet">
-                        <span>Interview etiquette training, covering professional behavior, body language, and communication strategies.</span>
-                    </div></li>
-                <li>
-                    <div class="li-content">
-                        <img src="/Services/bulletpoint.png" alt="Bullet" class="custom-bullet">
-                        <span>Secure your interview slots with our German partner and be fully prepared for success.</span>
-                    </div></li>
-            </ul>
-            <div class="enquire"><button>Enquire</button></div>
+      </div>
+    
+      <div class="sidebar">
+        <h3 class="sidebar-title">Most Read</h3>
+        <div class="sidebar-item" *ngFor="let item of mostRead">
+          <img [src]="item.image" alt="{{ item.title }}" class="sidebar-image" />
+          <a href="#" class="sidebar-link">{{ item.title }}</a>
         </div>
+      </div>
     </div>
+  </section>
 
-    <div class="service-image">
-        <div class="image-wrapper"><img src="/Services/Preparation.png" alt=""></div>
-    </div>
 </div>

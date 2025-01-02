@@ -1,51 +1,77 @@
-<!-- Footer Component -->
-<footer style="background-color: #0b2c4d; color: #ffffff; padding: 30px 0; font-family: 'Roboto Serif', serif;">
-    <div style="text-align: center; margin-bottom: 20px;">
-      <h2>Stay updated with Spaark Overseas</h2>
-      <input 
-        type="email" 
-        placeholder="Enter Email ID" 
-        style="padding: 10px; border-radius: 20px; border: none; width: 250px; text-align: center;" 
-      />
-      <button 
-        style="background: linear-gradient(to right, #f093fb, #f5576c); border: none; color: white; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
-        Subscribe Now
-      </button>
+<footer class="footer">
+  <div class="footer-subscription">
+    <h2>Stay updated with Spaark Overseas</h2>
+    <div class="subscription">
+      <input type="email" placeholder="Enter Email ID" class="footer-input" />
+      <button class="footer-button">Subscribe Now</button>
     </div>
-    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; font-size: 14px;">
-      <!-- Contact Section -->
-      <div>
-        <h3>Get In Touch With Us</h3>
-        <p><strong>Help & Support:</strong><br>+91 98710 88739<br>
-          <a href="mailto:hr@spaarkoverseas.com" style="color: #ffffff; text-decoration: underline;">
-            hrspaarkoverseas.com
-          </a>
-        </p>
-        <p><strong>Our Office Hours:</strong><br>9:30 AM - 6:30 PM (Mon-Sat)</p>
-      </div>
-      <!-- Location Section -->
-      <div>
-        <h3>Location</h3>
-        <p><strong>Spaark Overseas</strong></p>
-        <p>D-59, Sector 63,<br>Noida, Uttar Pradesh,<br>India, 201301</p>
-      </div>
-      <!-- Social Media Section -->
-      <div>
-        <h3>Join Us On</h3>
-        <div>
-          <a href="#" style="margin-right: 10px;">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="30px" />
-          </a>
-          <a href="#" style="margin-right: 10px;">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" width="30px" />
-          </a>
-          <a href="#">
-            <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" width="30px" />
-          </a>
+  </div>
+
+  <div class="footer-sections">
+
+
+    <div class="footer-section">
+      <h3>Menu</h3>
+      <ul class="footer-menu">
+        <li><a (click)="navigateTo('home')">Home</a></li>
+        <li><a (click)="navigateTo('about')">About Us</a></li>
+        <li><a (click)="navigateTo('jobs')">Jobs</a></li>
+        <li><a (click)="navigateTo('internships')">Abroad Internships</a></li>
+        <li><a (click)="navigateTo('service')">Our Services</a></li>
+        <li><a (click)="navigateTo('blogs')">Blogs</a></li>
+        <li><a (click)="navigateTo('why-germany')">Why Germany?</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Get In Touch With Us</h3>
+      <div class="section-content">
+        <div class="icon">
+          <a href="#"><img src="/Footer/call.png" alt="Call"/></a>
+        </div>
+        <div class="content">
+          <p><strong>Help & Support:</strong><br />+91 98710 88739<br />
+            <a href="mailto:hr@spaarkoverseas.com" class="footer-link">hr&#64;spaarkoverseas.com</a>
+          </p>
         </div>
       </div>
+
+      <div class="section-content">
+        <div class="icon">
+          <a href="#"><img src="/Footer/clock.png" alt="Clock"/></a>
+        </div>
+        <div class="content">
+          <p><strong>Our Office Hours:</strong><br />9:30 AM - 6:30 PM (Mon-Sat)</p>
+        </div>
+      </div>
+
+      <div class="section-content">
+        <div class="icon">
+          <a href="#"><img src="/Footer/location.png" alt="Clock"/></a>
+        </div>
+        <div class="content">
+          <p>D-59, Sector 63,<br />Noida, Uttar Pradesh,<br />India, 201301</p>
+        </div>
+      </div>
+      
+      
     </div>
-    <div style="text-align: center; margin-top: 20px; font-size: 12px;">
-      &copy; 2024 Copyright SpaarkOverseas
+
+    
+
+    <div class="footer-section">
+      <h3>Join Us On</h3>
+      <div class="footer-social-icons">
+        <a href="https://www.instagram.com/spaarkoverseasofficial/"><img src="/Footer/instagram.png" alt="Instagram"  /></a>
+        <a href="https://www.facebook.com/spaarkoverseasofficial/"><img src="/Footer/facebook.png" alt="Facebook"/></a>
+        <a href="https://www.linkedin.com/company/spaark-overseas-noida/"><img src="/Footer/linkedin.png" alt="LinkedIn"/></a>
+        <a href="https://www.youtube.com/@spaarkoverseasofficial/"><img src="/Footer/youtube.png" alt="Youtube"/></a>
+      </div>
     </div>
-  </footer>
+
+  </div>
+  
+  <div class="footer-bottom">
+    &copy; 2024 Copyright SpaarkOverseas
+  </div>
+</footer>
