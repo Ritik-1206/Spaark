@@ -1,0 +1,60 @@
+<div class="main">
+    <section class="home-image">
+
+    </section>
+
+    <section class="reviews">
+        <h1>Client <span class="highlight">Reviews</span></h1>
+
+        <div class="reviews-content">
+            <div class="review-card" *ngFor="let review of reviews">
+                <div class="review-header">
+                  <img 
+                    class="author-image" 
+                    [src]="review.imageUrl" 
+                    [alt]="'Image of ' + review.author" 
+                  />
+                  <p class="author-name">{{ review.author }}</p>
+                </div>
+                <p class="review-text">{{ review.text }}</p>
+              </div>
+        </div>
+    </section>
+
+    <div class="post-review">
+        <a *ngIf="!isFormVisible" (click)="toggleForm()" class="review-btn">Post Your Review</a>
+
+        <form *ngIf="isFormVisible" class="review-form">
+            
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input id="name" type="text" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="companyName">Company Name:</label>
+              <input id="companyName" type="text" name="companyName" required />
+            </div>
+            <div class="form-group">
+              <label for="designation">Designation:</label>
+              <input id="designation" type="text" name="designation" />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail:</label>
+              <input id="email" type="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="mobile">Mobile:</label>
+              <input id="mobile" type="tel" name="mobile" />
+            </div>
+            <div class="form-group">
+              <label for="reviewText">Write Your Review:</label>
+              <textarea id="reviewText"  name="text" required></textarea>
+            </div>
+      
+            <div class="form-actions">
+              <button type="submit">Submit</button>
+              <button type="button" (click)="toggleForm()">Cancel</button>
+            </div>
+          </form>
+    </div>
+</div>

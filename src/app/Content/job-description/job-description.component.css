@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@200;300;400;500;600;700&display=swap');
+
 
 * {
   box-sizing: border-box;
@@ -8,7 +8,11 @@
 .main-image{
     position: relative;
     box-sizing: border-box;
-    height: 50vh;
+    background-size: contain;
+    background-position: center; /* More concise */
+    background-repeat: no-repeat;
+    width: 100%; /* Adjust based on your layout */
+    height: 60vh;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -194,6 +198,9 @@
 
 @media screen and (max-width: 768px) {
 
+  .main-image{
+    height: 45vh;
+  }
     .job-content{
         padding: 20px;
       }

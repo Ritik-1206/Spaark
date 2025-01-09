@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
 * {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
@@ -279,6 +277,73 @@
     color: #004064;
   }
   
+
+
+.gallery{
+  background-color: #ECF1FF;
+}
+
+.gallery .heading{
+  display: flex;
+  background-color: #ECF1FF;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gallery .heading h2{
+  font-size: 30px;
+  color: #004B76;
+  font-weight: 600;
+}
+
+.image-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 300px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.mySwiper2 {
+  display: flex;
+  justify-content: center;  /* Center the slides horizontally */
+  align-items: center;      /* Center the slides vertically */
+  width: 80%;               /* Adjust based on the width you want */
+  padding-bottom: 30px;
+}
+
+.mySwiper2 .swiper-slide {
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  text-align: center;       
+}
+
+swiper-container::part(pagination-bullet) {
+  background-color: #d3d3d3;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  border-radius: 50%;
+}
+
+swiper-container::part(pagination-bullet-active) {
+  background-color: #0b2c4d;
+}
+
   
   @media screen and (max-width:1200px) {
 

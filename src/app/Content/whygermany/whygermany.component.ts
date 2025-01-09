@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-whygermany',
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class WhygermanyComponent {
 
-  constructor(private route: ActivatedRoute, private titleService: Title, private metaService: Meta) {}
+  constructor(private route: ActivatedRoute, private router: Router, private titleService: Title, private metaService: Meta) {}
 
   ngOnInit() {
     const routeData = this.route.snapshot.data;
@@ -22,28 +22,40 @@ export class WhygermanyComponent {
   reasons = [
     {
       title: 'Learning German',
-      imageUrl: '/WhyGermany/learning.png'
+      imageUrl: '/WhyGermany/learning.png',
+      path: 'why-germany/learning-german'
     },
     {
-      title: 'Discover German',
-      imageUrl: '/WhyGermany/discover.png'
+      title: 'Discover Germany',
+      imageUrl: '/WhyGermany/discover.png',
+      path: 'why-germany/discover-germany'
     },
     {
       title: 'Family Life in Germany',
-      imageUrl: '/WhyGermany/family.png'
+      imageUrl: '/WhyGermany/family.png',
+      path: 'why-germany/family-life'
     },
     {
       title: 'Housing & Mobility',
-      imageUrl: '/WhyGermany/housing.png'
+      imageUrl: '/WhyGermany/housing.png',
+      path: 'why-germany/housing-mobility'
     },
     {
       title: 'Money & Insurance',
-      imageUrl: '/WhyGermany/insurance.png'
+      imageUrl: '/WhyGermany/insurance.png',
+      path: 'why-germany/insurance'
     },
     {
-      title: 'Back to Germany',
-      imageUrl: '/WhyGermany/back.png'
+      title: 'Settling',
+      imageUrl: '/WhyGermany/back.png',
+      path: 'why-germany/settling'
     }
   ];
+
+  navigateTo(route?: string) {
+    this.router.navigate([route]).then(() => {
+      window.scrollTo(0, 0);
+    });
+  }
 
 }

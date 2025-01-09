@@ -1,7 +1,7 @@
 <div class="apply-enquiry-container">
     <div class="form-section">
       <h1>Apply or Enquiry</h1>
-      <form>
+      <!-- <form>
         <div class="input">
           <div class="form-group input-form">
             <label for="name">Name <span>*</span></label>
@@ -46,6 +46,47 @@
           <input type="file" id="cv" required style="border: none; margin-right: 20px;"/>
         </div>
         <button type="submit" class="submit-btn">SUBMIT</button>
+      </form> -->
+      <form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm)">
+        <div class="input">
+          <div class="form-group input-form">
+            <label for="name">Name <span>*</span></label>
+            <input type="text" id="name" name="name" ngModel placeholder="Enter your name" required />
+          </div>
+          <div class="form-group input-form">
+            <label for="phone">Phone No. <span>*</span></label>
+            <input type="tel" id="phone" name="phone_No" ngModel placeholder="Enter your phone number" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email <span>*</span></label>
+          <input type="email" id="email" name="email" ngModel placeholder="Enter your email" required />
+        </div>
+        <div class="form-group">
+          <label for="date">Best time to connect (Date) <span>*</span></label>
+          <input type="date" id="date" name="date" ngModel required />
+        </div>
+        <div class="form-group">
+          <label for="time">Best time to connect (Time) <span>*</span></label>
+          <input type="time" id="time" name="time" ngModel required />
+        </div>
+        <div class="form-group">
+          <label for="city">City <span>*</span></label>
+          <input type="text" id="city" name="city" ngModel placeholder="Enter your city" required />
+        </div>
+        <div class="form-group">
+          <label for="state">State <span>*</span></label>
+          <input type="text" id="state" name="state" ngModel placeholder="Enter your state" required />
+        </div>
+        <div class="form-group">
+          <label for="country">Country <span>*</span></label>
+          <input type="text" id="country" name="country" ngModel placeholder="Enter your country" required />
+        </div>
+        <div class="form-group">
+          <label for="cv">Upload CV <span>*</span></label>
+          <input type="file" id="cv" accept=".pdf" (change)="onFileChange($event)" required />
+        </div>
+        <button type="submit" class="submit-btn">SUBMIT</button>
       </form>
     </div>
     <div class="contact-section">
@@ -53,46 +94,56 @@
 
       <div class="section">
         <div class="icon">
-          <a href="#"><img src="/Contact/user.png" alt="Clock"/></a>
+          <a href="#"><img src="/Contact/user.png" alt="Contact Person"/></a>
         </div>
         <div class="content">
-          <p><strong>Contact Person</strong> <br> HR Priya</p>
+          <p><strong>Contact Person</strong> <br> HR ,Spaark Overseas</p>
         </div>
       </div>
 
       <div class="section">
         <div class="icon">
-          <a href="#"><img src="/Contact/location.png" alt="Clock"/></a>
+          <a href="#"><img src="/Contact/location.png" alt="Location"/></a>
         </div>
         <div class="content">
           <p><strong>Noida Office</strong> <br> D-59, Sector 63,Noida, Uttar Pradesh,India, 201301</p>
         </div>
       </div>
 
+
       <div class="section">
         <div class="icon">
-          <a href="#"><img src="/Contact/location.png" alt="Clock"/></a>
+          <a href="#"><img src="/Contact/call.png" alt="Call"/></a>
         </div>
         <div class="content">
-          <p><strong>Delhi Address</strong> <br> B/9-305, Spaark Tower, 5Th Floor, Rohini Sector 5, Delhi - 110085, India</p>
+          <p><strong>Call Us</strong> <br> +91-8920019466, 8826367950</p>
         </div>
       </div>
 
       <div class="section">
         <div class="icon">
-          <a href="#"><img src="/Contact/call.png" alt="Clock"/></a>
+          <a href="#"><img src="/Contact/mail.png" alt="Email"/></a>
         </div>
         <div class="content">
-          <p><strong>Call Us</strong> <br> +91-8920019466, 8826367950, 9871088739</p>
+          <p><strong>Email</strong> <br> <a href="mailto:hr@spaarkoverseas.com">hr&#64;spaarkoverseas.com</a></p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="icon">
+          <a href="#"><img src="/Contact/instagram.png" alt="Instagram"/></a>
+        </div>
+        <div class="content">
+          <p><strong>Instagram</strong> <br> <a href="https://www.instagram.com/spaarkoverseasofficial/">&#64;SpaarkOverseasOfficial</a></p>
         </div>
       </div>
 
       <div class="section" style="border-bottom: none;">
         <div class="icon">
-          <a href="#"><img src="/Contact/mail.png" alt="Clock"/></a>
+          <a href="#"><img src="/Contact/youtube.png" alt="Youtube"/></a>
         </div>
         <div class="content">
-          <p><strong>Email</strong> <br> <a href="mailto:hr@spaarkoverseas.com">hr&#64;spaarkoverseas.com</a></p>
+          <p><strong>Youtube</strong> <br> <a href="https://www.youtube.com/@spaarkoverseasofficial/">Spaark Overseas Official</a></p>
         </div>
       </div>
     </div>

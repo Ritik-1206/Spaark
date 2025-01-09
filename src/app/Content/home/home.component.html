@@ -2,15 +2,15 @@
     <section class="home-image">
         <div class="info">
             <div class="content">
-                <span class="quantity">500+</span>
+                <span class="quantity">200+</span>
                 <span>Candidates Placed</span>
             </div>
             <div class="content">
-                <span class="quantity">100+</span>
+                <span class="quantity">10+</span>
                 <span>Global Employers</span>
             </div>
             <div class="content">
-                <span class="quantity">100%</span>
+                <span class="quantity">98%</span>
                 <span>Visa Success Rate</span>
             </div>
         </div>
@@ -32,12 +32,12 @@
                     </div>
                 </div>
                 <div class="service-image">
-                    <div class="image-wrapper"><img src="/Home/JobService.png" alt=""></div>
+                    <div class="image-wrapper"><img src="/Home/JobService.png" alt="Job Placement Service" loading="lazy"></div>
                 </div>
             </div>
             <div class="reverse-service">
                 <div class="service-image">
-                    <div class="image-wrapper"><img src="/Home/TrainingService.png" alt=""></div>
+                    <div class="image-wrapper"><img src="/Home/TrainingService.png" alt="Language Training Service" loading="lazy"></div>
                 </div>
                 <div class="description">
                     <div class="details">
@@ -60,21 +60,21 @@
                     </div>
                 </div>
                 <div class="service-image">
-                    <div class="image-wrapper"><img src="/Home/Consulting.png" alt=""></div>
+                    <div class="image-wrapper"><img src="/Home/Consulting.png" alt="Abroad Study Consulting Service" loading="lazy"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="jobs">
+    <section class="jobs" style="margin-top: 15px;">
         <div class="heading">
             <h2><span style="color: black;">Featured</span> Jobs</h2>
             <p>We Are Well-Versed With The Different Job Opportunities</p>
         </div>
         <div class="job-body">
             <div class="job-cards-container">
-                <div class="job-card" *ngFor="let job of jobs">
-                    <img [src]="job.imageUrl" [alt]="job.title" class="job-image" />
+                <div class="job-card" *ngFor="let job of displayedJobs">
+                    <img [src]="job.imageUrl" [alt]="job.title" class="job-image" loading="lazy"/>
                     <h3>{{ job.title }}</h3>
                     <div class="job-details">
                         <p>📍 {{ job.location }}</p>
@@ -82,8 +82,8 @@
                         <p>🎓 {{ job.qualification }}</p>
                     </div>
                     <div class="job-buttons">
-                        <button class="apply-btn">APPLY</button>
-                        <button class="desc-btn">JOB DESCRIPTION</button>
+                        <button class="apply-btn" (click)="navigateTo('contact-us')">APPLY</button>
+                        <button class="desc-btn" (click)="navigateToJobDescription(job.jobID)">JOB DESCRIPTION</button>
                     </div>
                 </div>
             </div>
@@ -98,45 +98,66 @@
             <h2><span style="color: black;">Social</span> Media</h2>
         </div>
         <div class="media-body">
-            <div class="media-cards-container">
-                <div class="media-card" *ngFor="let media of social_media">
-                    <img [src]="media.icon_image" width="30px" class="media-icon"/>
-                    <img [src]="media.imageUrl" [alt]="media.title" class="media-image" />
+            <div class="media-cards-container" >
+                <div class="media-card-box" *ngFor="let media of social_media">
+                    <div class="media-card" (click)="redirectToMedia(media.link)"  style="cursor: pointer;">
+                        <img [src]="media.icon_image" width="50px" class="media-icon"/>
+                        <img [src]="media.imageUrl" [alt]="media.title" class="media-image" />
+                    </div>
                 </div>
+                
             </div>
         </div>
     </section>
-
-
 
     <section class="news">
         <div class="heading">
             <h2><span style="color: black;">Our</span> News Feed</h2>
         </div>
-        <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30" autoplay-delay="3500" autoplay-disable-on-interaction="false" loop="true"  breakpoints='{"640": {"slidesPerView": 1}, "768": {"slidesPerView": 2}, "1024": {"slidesPerView": 3}}'>
-            <swiper-slide><div class="news-card"><img src="/Home/news1.png" alt="News 1"></div></swiper-slide>
-            <swiper-slide><div class="news-card"><img src="/Home/news2.png" alt="News 2"></div></swiper-slide>
-            <swiper-slide><div class="news-card"><img src="/Home/news3.png" alt="News 3"></div></swiper-slide>
-            <swiper-slide><div class="news-card"><img src="/Home/news1.png" alt="News 1"></div></swiper-slide>
-            <swiper-slide><div class="news-card"><img src="/Home/news2.png" alt="News 2"></div></swiper-slide>
-            <swiper-slide><div class="news-card"><img src="/Home/news3.png" alt="News 3"></div></swiper-slide>
+        <swiper-container class="mySwiper" space-between="30" autoplay-delay="3500" autoplay-disable-on-interaction="false" loop="true"  breakpoints='{"640": {"slidesPerView": 1}, "768": {"slidesPerView": 2}, "1024": {"slidesPerView": 3}}'>
+            <swiper-slide><div class="news-card"><img src="/Home/news1.png" alt="News about Spaark Overseas"></div></swiper-slide>
+            <swiper-slide><div class="news-card"><img src="/Home/news2.png" alt="News about Spaark Overseas"></div></swiper-slide>
+            <swiper-slide><div class="news-card"><img src="/Home/news3.png" alt="News about Spaark Overseas"></div></swiper-slide>
+            <swiper-slide><div class="news-card"><img src="/Home/news1.png" alt="News about Spaark Overseas"></div></swiper-slide>
+            <swiper-slide><div class="news-card"><img src="/Home/news2.png" alt="News about Spaark Overseas"></div></swiper-slide>
+            <swiper-slide><div class="news-card"><img src="/Home/news3.png" alt="News about Spaark Overseas"></div></swiper-slide>
         </swiper-container>
+    </section>
+
+    <section class="process">
+        <div class="heading">
+            <h2><span style="color: black;">Our</span> Process</h2>
+        </div>
+        <div class="process-image">
+            <img src="/Home/process.png" alt="Our Process">
+        </div>
+        <!-- <div class="view-more-container">
+            <button class="view-more-btn" (click)="navigateTo('contact-us')">View More</button>
+        </div> -->
     </section>
 
     <section class="reviews">
         <div class="heading">
             <h2>Client Reviews</h2>
         </div>
-        <swiper-container *ngIf="isClient" class="mySwiper1"  pagination="true" pagination-clickable="true" space-between="30" autoplay-delay="2000" autoplay-disable-on-interaction="false" loop="true" breakpoints='{"640": {"slidesPerView": 1}, "768": {"slidesPerView": 2}, "1024": {"slidesPerView": 3}}'>
+        <swiper-container *ngIf="isClient" class="mySwiper1" space-between="30" autoplay-delay="2000" autoplay-disable-on-interaction="false" loop="true" breakpoints='{"640": {"slidesPerView": 1}, "768": {"slidesPerView": 2}, "1024": {"slidesPerView": 3}}'>
             <ng-container *ngFor="let review of reviews">
               <swiper-slide class="review-card">
                 <div class="carousel-item">
-                  <p class="review-text">{{ review.text }}</p>
+                    <img class="review-image" [src]="review.imageUrl" [alt]="'Image of ' + review.author" 
+                  />
+                  <p class="review-text">
+                    {{ review.text.length > 80 ? (review.text | slice:0:80) + '...' : review.text }}
+                  </p>
                   <p class="review-author">{{ review.author }}</p>
                 </div>
               </swiper-slide>
             </ng-container>
           </swiper-container>
-          
+          <div class="view-more-container">
+            <a class="view-more-btn" (click)="navigateTo('reviews')">View More</a>
+        </div>
     </section>
+
+
 </div>

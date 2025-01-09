@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiserviceService } from '../../apiservice.service';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-job-description',
@@ -19,8 +20,10 @@ export class JobDescriptionComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private apiservice: ApiserviceService,
-    private http: HttpClient
-  ) {}
+    private http: HttpClient,
+  ) {
+
+  }
 
   ngOnInit(): void {
     const jobIdParam = this.route.snapshot.paramMap.get('jobId');

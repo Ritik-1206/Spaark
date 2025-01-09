@@ -1,1 +1,10 @@
-<div [innerHTML]="htmlContent"></div>
+<div class="main">
+    <section class="main-image" [ngStyle]="{'background-image': 'url(' + blog.imageUrl + ')' , 'background-size': 'cover',
+    'background-position': '50% 50%;',
+    'background-repeat': 'no-repeat'}">
+    </section>
+
+    <section class="content">
+        <div [innerHTML]="blog.description"></div>
+    </section>
+</div>

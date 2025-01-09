@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { Routes,provideRouter } from '@angular/router';
 import { HomeComponent } from './Content/home/home.component';
 import { JobsComponent } from './Content/jobs/jobs.component';
 import { AboutComponent } from './Content/about/about.component';
@@ -10,6 +10,13 @@ import { WhygermanyComponent } from './Content/whygermany/whygermany.component';
 import { ContactusComponent } from './Content/contactus/contactus.component';
 import { JobDescriptionComponent } from './Content/job-description/job-description.component';
 import { BlogDescriptionComponent } from './Content/blog-description/blog-description.component';
+import { LanguageComponent } from './Content/GermanyLife/language/language.component';
+import { DiscoverComponent } from './Content/GermanyLife/discover/discover.component';
+import { FamilyComponent } from './Content/GermanyLife/family/family.component';
+import { HousingComponent } from './Content/GermanyLife/housing/housing.component';
+import { InsuranceComponent } from './Content/GermanyLife/insurance/insurance.component';
+import { SettlingComponent } from './Content/GermanyLife/settling/settling.component';
+import { ReviewsComponent } from './Content/reviews/reviews.component';
 
 export const routes: Routes = [
 
@@ -54,16 +61,61 @@ export const routes: Routes = [
         component: WhygermanyComponent,
         data: { title: 'Why Germany - Study and Work Abroad', description: 'Discover why Germany is the ideal destination for studying and working abroad.' }
     },
+// Why Germany Pages
+    { 
+        path: 'why-germany/learning-german', 
+        component: LanguageComponent,
+        data: { title: 'Learn German - Language Learning Tips', description: 'Find resources and tips to learn the German language and succeed in Germany.' }
+    },
+
+    { 
+        path: 'why-germany/discover-germany', 
+        component: DiscoverComponent,
+        data: { title: 'Discover Germany - Explore the Country', description: 'Explore Germany’s culture, history, and top attractions.' }
+    },
+
+    { 
+        path: 'why-germany/family-life', 
+        component: FamilyComponent,
+        data: { title: 'Family Life in Germany', description: 'Discover what family life in Germany is like, including education, lifestyle, and more.' }
+    },
+
+    { 
+        path: 'why-germany/housing-mobility', 
+        component: HousingComponent,
+        data: { title: 'Why Germany - Study and Work Abroad', description: 'Discover why Germany is the ideal destination for studying and working abroad.' }
+    },
+
+    { 
+        path: 'why-germany/insurance', 
+        component: InsuranceComponent,
+        data: { title: 'Money & Insurance in Germany', description: 'Learn about financial management and insurance options in Germany.' }
+    },
+
+    { 
+        path: 'why-germany/settling', 
+        component: SettlingComponent,
+        data: { title: 'Settling in Germany - A Complete Guide', description: 'Learn how to settle in Germany, from finding housing to adapting to life there.' }
+    },
     { 
         path: 'contact-us', 
         component: ContactusComponent,
         data: { title: 'Contact Us - Get in Touch', description: 'Have questions? Reach out to us to learn more about our services and opportunities.' }
 
     },
-    {
-        path: 'jobs/job-description/:jobId' , component: JobDescriptionComponent
+    { 
+        path: 'reviews', 
+        component: ReviewsComponent,
+        data: { 
+            title: 'Reviews - What Our Clients Say', 
+            description: 'Read what our satisfied clients have to say about our services and their experiences with us.' 
+        }
+
     },
     {
-        path: 'blog-description' , component: BlogDescriptionComponent
+        path: 'jobs/job-description/:jobId' , component: JobDescriptionComponent,
+    },
+    {
+        path: 'blogs/blog-description/:blogId' , component: BlogDescriptionComponent
     }
 ];

@@ -77,6 +77,21 @@
         </div>
     </section>
 
+    <section class="gallery">
+        <div class="heading">
+            <h2><span style="color: black;">Our</span> Gallery</h2>
+        </div>
+        <swiper-container *ngIf="isClient" class="mySwiper2" space-between="30" autoplay-delay="2000" autoplay-disable-on-interaction="false" loop="true"  breakpoints='{"640": {"slidesPerView": 1}, "768": {"slidesPerView": 2}, "1024": {"slidesPerView": 3}}'>
+            <ng-container *ngFor="let image of galleryImages">
+                <swiper-slide >
+                    <div class="image-card">
+                        <img [src]="image.image_url" [alt]="image.title">
+                    </div>
+                </swiper-slide>
+            </ng-container>
+        </swiper-container>
+    </section>
+
     <section class="advisory">
         <div class="heading">
             <span>Our Advisory Board</span>

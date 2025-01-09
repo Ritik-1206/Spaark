@@ -15,14 +15,18 @@
   <section class="blogs">
     <div class="content-container">
       <div class="main-content">
-        <div class="article" *ngFor="let blog of blogs">
+        <div class="article" *ngFor="let blog of displayedBlogs">
           <img [src]="blog.imageUrl" alt="{{ blog.title }}" class="article-image" />
           <div class="article-details">
-            <h2 class="article-title">{{ blog.title }}</h2>
+            <h2 class="article-title" (click)="navigateToBlogDescription(blog.blogID)">{{ blog.title }}</h2>
             <p class="article-date">{{ blog.date }}</p>
-            <p class="article-summary">{{ blog.description }}</p>
-            <a href="#" class="read-more">Read More »</a>
+            <p class="article-summary" [innerHTML]="blog.articleSummary"></p>
+            <a class="read-more" (click)="navigateToBlogDescription(blog.blogID)">Read More »</a>
           </div>
+        </div>
+
+        <div *ngIf="canLoadMore()" class="view-more-container">
+          <button class="view-more-btn" (click)="loadMoreBlogs()">Load More</button>
         </div>
       </div>
     
@@ -30,7 +34,7 @@
         <h3 class="sidebar-title">Most Read</h3>
         <div class="sidebar-item" *ngFor="let item of mostRead">
           <img [src]="item.image" alt="{{ item.title }}" class="sidebar-image" />
-          <a href="#" class="sidebar-link">{{ item.title }}</a>
+          <a style="cursor: pointer;" (click)="navigateToBlogDescription(item.id)" class="sidebar-link">{{ item.title }}</a>
         </div>
       </div>
     </div>

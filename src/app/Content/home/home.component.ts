@@ -1,9 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { FooterComponent } from "../../footer/footer.component";
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import Swiper from 'swiper';
 import { Meta, Title } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
+import { ApiserviceService } from '../../apiservice.service';
+import { link } from 'fs';
 
 @Component({
   selector: 'app-home',
@@ -14,11 +17,16 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class HomeComponent {
   isClient = false;
+  jobs: any[] = [];
+  displayedJobs: any[] = [];
+  currentIndex: number = 3; 
 
   constructor(private router: Router,
     private route: ActivatedRoute, 
     private titleService: Title, 
-    private metaService: Meta
+    private metaService: Meta,
+    private http: HttpClient,
+    private apiservice: ApiserviceService
   ) {
     if (typeof window !== 'undefined') {
       this.isClient = true;
@@ -30,6 +38,7 @@ export class HomeComponent {
     const routeData = this.route.snapshot.data;
     this.titleService.setTitle(routeData['title']);  // Use ['title'] to access
     this.metaService.updateTag({ name: 'description', content: routeData['description'] });  // Use ['description']
+    this.fetchJobs();
   }
 
   services = [
@@ -51,87 +60,86 @@ export class HomeComponent {
   ];
 
   // Jobs data as a plain array of objects
-  jobs = [
-    {
-      title: 'Sales Executive',
-      location: 'Noida Sector 63',
-      openings: '20+ Openings',
-      qualification: 'Graduation',
-      imageUrl: '/Home/SalesJob.png'
-    },
-    {
-      title: 'Physiotherapy',
-      location: 'Germany',
-      openings: '10+ Openings',
-      qualification: 'Bachelors of Physical Therapy',
-      imageUrl: '/Home/PhysioJob.png'
-    },
-    {
-      title: 'Nursing Staff',
-      location: 'Germany',
-      openings: '100+ Openings',
-      qualification: '12th/Graduation',
-      imageUrl: '/Home/NurseJob.png'
-    },
-    {
-      title: 'Site Manager',
-      location: 'Germany',
-      openings: '10+ Openings',
-      qualification: 'MBA',
-      imageUrl: '/Home/SiteManager.png'
-    }
-  ];
+  fetchJobs(): void {
+    this.http.get<any[]>(this.apiservice.jobApi).subscribe({
+      next: (data) => {
+        this.jobs = data;
+        this.displayedJobs = this.jobs.slice(0, this.currentIndex);
+      },
+      error: (error) => {
+        console.error('Error fetching jobs:', error);
+      },
+    });
+  }
+
+
+  navigateToJobDescription(jobId: number): void {
+    this.router.navigate(['/jobs/job-description', jobId]);
+  }
 
   social_media = [
     {
       title: 'Facebook',
-      icon_image: '/Footer/facebook.png',
-      imageUrl: '/Home/facebook.png'
+      icon_image: '/Home/icons/facebook.png',
+      imageUrl: '/Home/facebook.png',
+      link: 'https://www.facebook.com/spaarkoverseasofficial/'
     },
     {
-      title: 'Physiotherapy',
-      location: 'Germany',
-      openings: '10+ Openings',
-      qualification: 'Bachelors of Physical Therapy',
-      imageUrl: '/Home/PhysioJob.png'
+      title: 'Instagram',
+      icon_image: '/Home/icons/instagram.png',
+      imageUrl: '/Home/Instagram.png',
+      link: 'https://www.instagram.com/spaarkoverseasofficial/'
     },
     {
-      title: 'Nursing Staff',
-      location: 'Germany',
-      openings: '100+ Openings',
-      qualification: '12th/Graduation',
-      imageUrl: '/Home/NurseJob.png'
+      title: 'Youtube',
+      icon_image: '/Home/icons/youtube.png',
+      imageUrl: '/Home/Instagram.png',
+      link: 'https://www.youtube.com/@spaarkoverseasofficial/'
     },
     {
-      title: 'Site Manager',
-      location: 'Germany',
-      openings: '10+ Openings',
-      qualification: 'MBA',
-      imageUrl: '/Home/SiteManager.png'
+      title: 'Linkedin',
+      icon_image: '/Home/icons/linkedin.png',
+      imageUrl: '/Home/Instagram.png',
+      link: 'https://www.linkedin.com/company/spaark-overseas-noida/'
     }
   ];
 
   reviews = [
     {
-      text: 'One of the best company in India for job seeker. Thanks Spaark Overseas to help me in searching the new job.',
-      author: 'Ajeet Biswas',
-    },
-    {
-      text: 'I am happy to be associated with this Manpower Services. It works with utmost responsibility & care.',
-      author: 'Shweta Tamang',
-    },
-    {
-      text: 'They were just great!..the process had some hurdles, but they still came through and walked with me till now, I highly recommend them.',
+      imageUrl: '/Home/Reviews/Review_1.jpeg',
+      text: 'Spaark Overseas is highly professional and trustworthy. They guided me through the entire process, from documentation to interview preparation.',
       author: 'Jaspreet Singh',
     },
     {
-      text: 'Excellent service with proper guidance and a friendly approach. Highly satisfied!',
-      author: 'Rahul Mehra',
+      imageUrl: '/Home/Reviews/Review_2.jpeg',
+      text: 'Their expertise in the German nursing program is incredible. Spaark Overseas is undoubtedly the best in the business.',
+      author: 'Divya Jain',
     },
     {
-      text: 'Professional and supportive throughout my journey. Thank you!',
-      author: 'Priya Sharma',
+      imageUrl: '/Home/Reviews/Review_3.jpeg',
+      text: 'I was skeptical at first, but Spaark Overseas delivered on all their promises. I’m now part of the Ausbildung program in Germany. Thank you',
+      author: 'Abhinav Singh',
     },
+    {
+      imageUrl: '/Home/Reviews/Review_4.jpeg',
+      text: 'Thanks to Spaark Overseas, I am now working as a physiotherapist in Germany. They are the best placement agency for healthcare professionals.',
+      author: 'Sachin Rao',
+    },
+    {
+      imageUrl: '/Home/Reviews/Review_5.jpeg',
+      text: 'The Ausbildung program through Spaark Overseas has changed my life. They were with me at every step and made the transition to Germany effortless.',
+      author: 'Vivek Gupta',
+    },
+    {
+      imageUrl: '/Home/Reviews/Review_6.jpeg',
+      text: 'I cannot thank Spaark Overseas enough for guiding me through the German Nursing program. The entire process was smooth, and their support was outstanding. Highly recommended!',
+      author: 'Amit Sharma',
+    },
+    {
+      imageUrl: '/Home/Reviews/Review_7.jpeg',
+      text: 'I had a fantastic experience with Spaark Overseas. They are experts in German placements and very supportive.',
+      author: 'Rohit Jain',
+    }
   ];
 
   navigateTo(route?: string) {
@@ -143,4 +151,32 @@ export class HomeComponent {
       console.error('Route is undefined!');
     }
   }
+
+  redirectToMedia(link: string): void {
+    window.open(link, '_blank');
+  }
+
+  galleryImages = [
+    { image_url: "/Home/Gallery/Image_1.jpeg", title: "Image_1" },
+    { image_url: "/Home/Gallery/Image_2.jpeg", title: "Image_2" },
+    { image_url: "/Home/Gallery/Image_3.jpeg", title: "Image_3" },
+    { image_url: "/Home/Gallery/Image_4.jpeg", title: "Image_4" },
+    { image_url: "/Home/Gallery/Image_5.jpeg", title: "Image_5" },
+    { image_url: "/Home/Gallery/Image_6.jpeg", title: "Image_6" },
+    { image_url: "/Home/Gallery/Image_1.jpeg", title: "Image_7" },
+    { image_url: "/Home/Gallery/Image_2.jpeg", title: "Image_8" },
+    { image_url: "/Home/Gallery/Image_3.jpeg", title: "Image_9" },
+    { image_url: "/Home/Gallery/Image_4.jpeg", title: "Image_10" },
+    { image_url: "/Home/Gallery/Image_5.jpeg", title: "Image_11" },
+    { image_url: "/Home/Gallery/Image_6.jpeg", title: "Image_12" },
+    { image_url: "/Home/Gallery/Image_1.jpeg", title: "Image_13" },
+    { image_url: "/Home/Gallery/Image_2.jpeg", title: "Image_14" },
+    { image_url: "/Home/Gallery/Image_3.jpeg", title: "Image_15" },
+    { image_url: "/Home/Gallery/Image_4.jpeg", title: "Image_16" },
+    { image_url: "/Home/Gallery/Image_5.jpeg", title: "Image_17" },
+    { image_url: "/Home/Gallery/Image_6.jpeg", title: "Image_18" },
+    { image_url: "/Home/Gallery/Image_6.jpeg", title: "Image_19" },
+    { image_url: "/Home/Gallery/Image_6.jpeg", title: "Image_20" }
+    ];
+  
 }

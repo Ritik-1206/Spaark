@@ -1,7 +1,8 @@
 <div class="main">
-    <section class="main-image" [ngStyle]="{'background-image': 'url(' + job.imageUrl + ')' , 'background-size': 'cover',
-    'background-position': '50% 50%;',
-    'background-repeat': 'no-repeat'}">
+    <section 
+    class="main-image" 
+    [ngClass]="{'custom-image-class': job.imageUrl}" 
+    [ngStyle]="{'background-image': job.imageUrl ? 'url(' + job.imageUrl + ')' : ''}">
         <div class="info">
             
             <h1>{{job.title}}</h1>

@@ -9,5 +9,6 @@ export class ApiserviceService {
 
   public apiUrl = 'https://webspaarkapi.azurewebsites.net/api';
   public jobApi = this.apiUrl + '/jobs';
-  public blogApi = this.apiUrl + '/blogs'
+  public blogApi = this.apiUrl + '/blogs';
+  public enquire = this.apiUrl + '/Registration';
 }

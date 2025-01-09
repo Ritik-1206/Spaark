@@ -17,7 +17,7 @@
                   <img [src]="reason.imageUrl" [alt]="reason.title" class="reason-image" />
                   <h3>{{ reason.title }}</h3>
                   <div class="reason-buttons">
-                      <button class="apply-btn">Learn More</button>
+                      <button class="apply-btn" (click)="navigateTo(reason.path)">Learn More</button>
                   </div>
               </div>
           </div>
