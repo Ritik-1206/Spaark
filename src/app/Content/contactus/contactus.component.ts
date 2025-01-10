@@ -48,7 +48,6 @@ export class ContactusComponent {
         isActive: true,
       };
 
-
       console.log(requestBody);
 
       this.http.post(this.apiervice.enquire, requestBody).subscribe({

@@ -53,27 +53,27 @@ export class AboutComponent {
   ];
 
   galleryImages = [
-    { image_url: "/Home/Gallery/Image_1.jpeg", title: "Image_1" },
-    { image_url: "/Home/Gallery/Image_2.jpeg", title: "Image_2" },
-    { image_url: "/Home/Gallery/Image_3.jpeg", title: "Image_3" },
-    { image_url: "/Home/Gallery/Image_4.jpeg", title: "Image_4" },
-    { image_url: "/Home/Gallery/Image_5.jpeg", title: "Image_5" },
-    { image_url: "/Home/Gallery/Image_6.jpeg", title: "Image_6" },
-    { image_url: "/Home/Gallery/Image_7.jpeg", title: "Image_7" },
-    { image_url: "/Home/Gallery/Image_8.jpeg", title: "Image_8" },
-    { image_url: "/Home/Gallery/Image_9.jpeg", title: "Image_9" },
-    { image_url: "/Home/Gallery/Image_10.jpeg", title: "Image_10" },
-    { image_url: "/Home/Gallery/Image_11.jpeg", title: "Image_11" },
-    { image_url: "/Home/Gallery/Image_12.jpeg", title: "Image_12" },
-    { image_url: "/Home/Gallery/Image_13.jpeg", title: "Image_13" },
-    { image_url: "/Home/Gallery/Image_14.jpeg", title: "Image_14" },
-    { image_url: "/Home/Gallery/Image_15.jpeg", title: "Image_15" },
-    { image_url: "/Home/Gallery/Image_16.jpeg", title: "Image_16" },
-    { image_url: "/Home/Gallery/Image_17.jpeg", title: "Image_17" },
-    { image_url: "/Home/Gallery/Image_18.jpeg", title: "Image_18" },
-    { image_url: "/Home/Gallery/Image_19.jpeg", title: "Image_19" },
-    { image_url: "/Home/Gallery/Image_20.jpeg", title: "Image_20" },
-    { image_url: "/Home/Gallery/Image_21.jpeg", title: "Image_20" }
+    { image_url: "/Gallery/Image_1.jpeg", title: "Image_1" },
+    { image_url: "/Gallery/Image_2.jpeg", title: "Image_2" },
+    { image_url: "/Gallery/Image_3.jpeg", title: "Image_3" },
+    { image_url: "/Gallery/Image_4.jpeg", title: "Image_4" },
+    { image_url: "/Gallery/Image_5.jpeg", title: "Image_5" },
+    { image_url: "/Gallery/Image_6.jpeg", title: "Image_6" },
+    { image_url: "/Gallery/Image_7.jpeg", title: "Image_7" },
+    { image_url: "/Gallery/Image_8.jpeg", title: "Image_8" },
+    { image_url: "/Gallery/Image_9.jpeg", title: "Image_9" },
+    { image_url: "/Gallery/Image_10.jpeg", title: "Image_10" },
+    { image_url: "/Gallery/Image_11.jpeg", title: "Image_11" },
+    { image_url: "/Gallery/Image_12.jpeg", title: "Image_12" },
+    { image_url: "/Gallery/Image_13.jpeg", title: "Image_13" },
+    { image_url: "/Gallery/Image_14.jpeg", title: "Image_14" },
+    { image_url: "/Gallery/Image_15.jpeg", title: "Image_15" },
+    { image_url: "/Gallery/Image_16.jpeg", title: "Image_16" },
+    { image_url: "/Gallery/Image_17.jpeg", title: "Image_17" },
+    { image_url: "/Gallery/Image_18.jpeg", title: "Image_18" },
+    { image_url: "/Gallery/Image_19.jpeg", title: "Image_19" },
+    { image_url: "/Gallery/Image_20.jpeg", title: "Image_20" },
+    { image_url: "/Gallery/Image_21.jpeg", title: "Image_20" }
     ];
   
 

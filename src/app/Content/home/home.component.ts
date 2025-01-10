@@ -80,26 +80,26 @@ export class HomeComponent {
   social_media = [
     {
       title: 'Facebook',
-      icon_image: '/Home/icons/facebook.png',
+      icon_image: '/icons/facebook.png',
       imageUrl: '/Home/facebook.png',
       link: 'https://www.facebook.com/spaarkoverseasofficial/'
     },
     {
       title: 'Instagram',
-      icon_image: '/Home/icons/instagram.png',
-      imageUrl: '/Home/Instagram.png',
+      icon_image: '/icons/instagram.png',
+      imageUrl: '/Home/Instagram.jpeg',
       link: 'https://www.instagram.com/spaarkoverseasofficial/'
     },
     {
       title: 'Youtube',
-      icon_image: '/Home/icons/youtube.png',
-      imageUrl: '/Home/Instagram.png',
+      icon_image: '/icons/youtube.png',
+      imageUrl: '/Home/Youtube.jpeg',
       link: 'https://www.youtube.com/@spaarkoverseasofficial/'
     },
     {
       title: 'Linkedin',
-      icon_image: '/Home/icons/linkedin.png',
-      imageUrl: '/Home/Instagram.png',
+      icon_image: '/icons/linkedin.png',
+      imageUrl: '/Home/Linkedin.png',
       link: 'https://www.linkedin.com/company/spaark-overseas-noida/'
     }
   ];
@@ -116,27 +116,27 @@ export class HomeComponent {
       author: 'Divya Jain',
     },
     {
-      imageUrl: '/Home/Reviews/Review_3.jpeg',
+      imageUrl: '/Reviews/Review_3.jpeg',
       text: 'I was skeptical at first, but Spaark Overseas delivered on all their promises. I’m now part of the Ausbildung program in Germany. Thank you',
       author: 'Abhinav Singh',
     },
     {
-      imageUrl: '/Home/Reviews/Review_4.jpeg',
+      imageUrl: '/Reviews/Review_4.jpeg',
       text: 'Thanks to Spaark Overseas, I am now working as a physiotherapist in Germany. They are the best placement agency for healthcare professionals.',
       author: 'Sachin Rao',
     },
     {
-      imageUrl: '/Home/Reviews/Review_5.jpeg',
+      imageUrl: '/Reviews/Review_5.jpeg',
       text: 'The Ausbildung program through Spaark Overseas has changed my life. They were with me at every step and made the transition to Germany effortless.',
       author: 'Vivek Gupta',
     },
     {
-      imageUrl: '/Home/Reviews/Review_6.jpeg',
+      imageUrl: '/Reviews/Review_6.jpeg',
       text: 'I cannot thank Spaark Overseas enough for guiding me through the German Nursing program. The entire process was smooth, and their support was outstanding. Highly recommended!',
       author: 'Amit Sharma',
     },
     {
-      imageUrl: '/Home/Reviews/Review_7.jpeg',
+      imageUrl: '/Reviews/Review_7.jpeg',
       text: 'I had a fantastic experience with Spaark Overseas. They are experts in German placements and very supportive.',
       author: 'Rohit Jain',
     }
@@ -157,26 +157,26 @@ export class HomeComponent {
   }
 
   galleryImages = [
-    { image_url: "/Home/Gallery/Image_1.jpeg", title: "Image_1" },
-    { image_url: "/Home/Gallery/Image_2.jpeg", title: "Image_2" },
-    { image_url: "/Home/Gallery/Image_3.jpeg", title: "Image_3" },
-    { image_url: "/Home/Gallery/Image_4.jpeg", title: "Image_4" },
-    { image_url: "/Home/Gallery/Image_5.jpeg", title: "Image_5" },
-    { image_url: "/Home/Gallery/Image_6.jpeg", title: "Image_6" },
-    { image_url: "/Home/Gallery/Image_1.jpeg", title: "Image_7" },
-    { image_url: "/Home/Gallery/Image_2.jpeg", title: "Image_8" },
-    { image_url: "/Home/Gallery/Image_3.jpeg", title: "Image_9" },
-    { image_url: "/Home/Gallery/Image_4.jpeg", title: "Image_10" },
-    { image_url: "/Home/Gallery/Image_5.jpeg", title: "Image_11" },
-    { image_url: "/Home/Gallery/Image_6.jpeg", title: "Image_12" },
-    { image_url: "/Home/Gallery/Image_1.jpeg", title: "Image_13" },
-    { image_url: "/Home/Gallery/Image_2.jpeg", title: "Image_14" },
-    { image_url: "/Home/Gallery/Image_3.jpeg", title: "Image_15" },
-    { image_url: "/Home/Gallery/Image_4.jpeg", title: "Image_16" },
-    { image_url: "/Home/Gallery/Image_5.jpeg", title: "Image_17" },
-    { image_url: "/Home/Gallery/Image_6.jpeg", title: "Image_18" },
-    { image_url: "/Home/Gallery/Image_6.jpeg", title: "Image_19" },
-    { image_url: "/Home/Gallery/Image_6.jpeg", title: "Image_20" }
+    { image_url: "/Gallery/Image_1.jpeg", title: "Image_1" },
+    { image_url: "/Gallery/Image_2.jpeg", title: "Image_2" },
+    { image_url: "/Gallery/Image_3.jpeg", title: "Image_3" },
+    { image_url: "/Gallery/Image_4.jpeg", title: "Image_4" },
+    { image_url: "/Gallery/Image_5.jpeg", title: "Image_5" },
+    { image_url: "/Gallery/Image_6.jpeg", title: "Image_6" },
+    { image_url: "/Gallery/Image_1.jpeg", title: "Image_7" },
+    { image_url: "/Gallery/Image_2.jpeg", title: "Image_8" },
+    { image_url: "/Gallery/Image_3.jpeg", title: "Image_9" },
+    { image_url: "/Gallery/Image_4.jpeg", title: "Image_10" },
+    { image_url: "/Gallery/Image_5.jpeg", title: "Image_11" },
+    { image_url: "/Gallery/Image_6.jpeg", title: "Image_12" },
+    { image_url: "/Gallery/Image_1.jpeg", title: "Image_13" },
+    { image_url: "/Gallery/Image_2.jpeg", title: "Image_14" },
+    { image_url: "/Gallery/Image_3.jpeg", title: "Image_15" },
+    { image_url: "/Gallery/Image_4.jpeg", title: "Image_16" },
+    { image_url: "/Gallery/Image_5.jpeg", title: "Image_17" },
+    { image_url: "/Gallery/Image_6.jpeg", title: "Image_18" },
+    { image_url: "/Gallery/Image_6.jpeg", title: "Image_19" },
+    { image_url: "/Gallery/Image_6.jpeg", title: "Image_20" }
     ];
   
 }

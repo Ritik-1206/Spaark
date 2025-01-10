@@ -50,121 +50,145 @@
     margin-bottom: 10px;
   }
 
-  .internships .heading{
+  .job-cards-container {
     display: flex;
-    align-items: center;
-    justify-content: center ;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
   }
-
-  .internships .heading span{
-    font-size: 35px;
+  
+  .job-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  
+  .job-image {
+    width: 90%;
+    height: 180px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  
+  .job-card h3 {
+    font-size: 1.4rem;
+    margin: 15px 0;
     font-weight: 600;
-    color: #004064;
+    color: #333;
   }
   
-.internship-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  padding: 20px;
-}
-
-.internship-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 350px;
-  overflow: hidden;
-  text-align: center;
-  transition: transform 0.3s ease;
-  padding: 20px 0px;
-}
-
-
-.internship-image {
-  width: 90%;
-  height: 220px;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-.internship-card h3 {
-  font-size: 1.4rem;
-  margin: 15px 0;
-  font-weight: 600;
-  color: #333;
-}
-
-.internship-details p {
-  font-size: 0.9rem;
-  color: #555;
-  margin: 5px 0;
-}
-
-.internship-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 10px 0 15px;
-}
-
-.apply-btn {
-  background-color: #1c4e80;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.desc-btn {
-  background-color: #e8edf1;
-  color: #1c4e80;
-}
-
-.apply-btn:hover {
-  background-color: #163e63;
-}
-
-
-  @media screen and (max-width:1024px) {
-
-    .main-image{
-      padding-top: 40px;
-      padding-bottom: 40px;
-      height: auto;
-
-    }
-    .info {
-      width: 90%;
-    }
+  .job-details p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 5px 0;
   }
-
-  @media screen and (max-width:659px){
-    .internship-card {
-      width: 500px;
+  
+  .job-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0 15px;
+  }
+  
+  .apply-btn,
+  .desc-btn {
+    background-color: #1c4e80;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .desc-btn {
+    background-color: #e8edf1;
+    color: #1c4e80;
+  }
+  
+  .apply-btn:hover {
+    background-color: #163e63;
+  }
+  
+  .desc-btn:hover {
+    background-color: #c7d3e2;
+  }
+  
+  .view-more-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .view-more-btn {
+    background-color: #1c4e80;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .view-more-btn:hover {
+    background-color: #163e63;
+  }
+  
+  @media screen and (max-width:600px) {
+    .search-container{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
   
-    .internship-image{
-      height: 220px;
+    .search-input{
+      width: 100%;
+    }
+    
+  }
+  
+    @media screen and (max-width:1024px) {
+  
+      .main-image{
+        padding-top: 40px;
+        padding-bottom: 40px;
+        height: auto;
+  
+      }
+      .info {
+        width: 90%;
+      }
+  
     }
   
-  }
-
-  @media screen and (min-width:660px) and (max-width:883px){
-    .internship-card {
-      width: 270px;
+    @media screen and (max-width:659px){
+      .job-card {
+        width: 500px;
+      }
+    
+      .job-image{
+        height: 240px;
+      }
+    
     }
-  }
-
-  @media screen and (min-width:1024px) and (max-width:1170px){
-    .internship-card {
-      width: 290px;
+  
+    @media screen and (min-width:660px) and (max-width:883px){
+      .job-card {
+        width: 270px;
+      }
     }
-  }
+  
+    @media screen and (min-width:1024px) and (max-width:1170px){
+      .job-card {
+        width: 290px;
+      }
+    }
