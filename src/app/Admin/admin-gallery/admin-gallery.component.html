@@ -1,0 +1,35 @@
+<div class="main">
+    
+    <div class="head">
+        <h1>Gallery Images</h1>
+        <div class="add-job">
+            <!-- <button><i class="ri-add-fill" style="margin-right: 10px;" ></i>Upload </button> -->
+            <button (click)="triggerFileInput()">
+                <i class="ri-add-fill" style="margin-right: 10px;"></i>Upload
+            </button>
+            <input type="file" #fileInput style="display: none;" (change)="onFileChange($event)" />
+        </div>
+    </div>
+
+    <div class="container">
+        
+
+        <div class="image-card" *ngFor="let image of images">
+            <img [src]="image.filePath" >
+            <div class="button-row">
+                <!-- <button *ngIf="image.isActive" (click)="hideImage(image)">
+                    <i class="ri-eye-off-line"></i> Hide
+                  </button>
+                  <button *ngIf="!image.isActive" (click)="showImage(image)">
+                    <i class="ri-eye-line"></i> Show
+                  </button> -->
+                  <button class="delete-btn" (click)="deleteImage(image.imageID)"><i class="ri-delete-bin-5-line"></i>Delete</button>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+   
+</div>

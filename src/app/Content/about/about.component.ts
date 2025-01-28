@@ -46,10 +46,10 @@ export class AboutComponent {
 
   employees = [
     { name: 'Mrs Aashita', image: '/About/Aashita.png' , profile: 'Co Founder'},
-    { name: 'Mrs Priya Ojha', image: '/About/PriyaOjha.png' , profile: 'HR Head'},
+    { name: 'Ms Priya Ojha', image: '/About/PriyaOjha.png' , profile: 'HR Head'},
     { name: 'Mr Adarsh Pandey', image: '/About/AdarshPandey.png' , profile: 'Business Development'},
     { name: 'Mr Paras Bisht', image: '/About/ParasBisht.png' , profile: 'Senior Career Counsellor'},
-    { name: 'Mr Aryan Yadav', image: '/About/AryanYadav.png' , profile: 'Digital Marleting'},
+    { name: 'Mr Aryan Yadav', image: '/About/AryanYadav.png' , profile: 'Digital Marketing'},
   ];
 
   galleryImages = [

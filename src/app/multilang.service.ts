@@ -21,8 +21,7 @@ export class MultilangService {
       } else {
         this.languageSignal.set('en'); // Set default language if none found
       }
-
-      // Update localStorage whenever the languageSignal changes
+      
       effect(() => {
         window.localStorage.setItem('languageSignal', JSON.stringify(this.languageSignal()));
         this.translateService.use(this.languageSignal());

@@ -1,0 +1,40 @@
+<div class="modal-overlay">
+    <div class="modal-content">
+
+        <div class="heading">
+            <div class="title">
+                <h2>Share Your Queries</h2>
+            </div>
+            <a (click)="closeModal()" style="font-size: 24px; cursor: pointer;"><i class="ri-close-large-fill"></i></a>
+        </div>
+
+        <div class="query-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" [(ngModel)]="name" id="name" />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" [(ngModel)]="email" id="email"/>
+            </div>
+
+            <div class="form-group">
+                <label for="program">Program:</label>
+                <!-- <input type="text" id="program"/> -->
+                <select id="program" [(ngModel)]="selectedProgram">
+                    <option value="" disabled selected>Select Program</option>
+                    <option *ngFor="let program of programs" [value]="program.title">{{ program.title }} ({{program.location}})</option>
+                  </select>
+            </div>
+
+            <div class="form-group">
+                <label for="query">Query:</label>
+                <textarea id="text" [(ngModel)]="query"></textarea>
+            </div>
+        </div>
+      
+        <button (click)="raiseQuery()">Raise Query</button>
+    </div>
+  </div>
+  

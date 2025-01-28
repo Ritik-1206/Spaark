@@ -1,0 +1,85 @@
+<div class="main">
+    <section 
+    class="main-image" 
+    [ngClass]="{'custom-image-class': job.imageUrl}" 
+    [ngStyle]="{'background-image': job.imageUrl ? 'url(' + job.imageUrl + ')' : ''}">
+        <div class="info">
+            
+            <h1>{{job.title}}</h1>
+        </div>
+    </section>
+
+    <section class="job-content">
+        <h1>Job <span class="highlight">Description</span></h1>
+
+        <div class="description">
+            <div class="description-content">
+                <div class="eligible">
+                    <div class="heading">
+                        <div class="icon">
+                            <a><img src="/assets/qualified.png" alt="Eligible"/></a>
+                        </div>
+                        <div class="header">
+                            <span>Eligibility Criteria</span>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Location :</strong>{{job.location}}</li>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Job Type :</strong>{{job.openings}}</li>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Qualification :</strong>{{job.qualification}}</li>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Age :</strong>{{job.age}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="benefits">
+                    <div class="heading">
+                        <div class="icon">
+                            <a><img src="/assets/benefits.png" alt="Benefits"/></a>
+                        </div>
+                        <div class="header">
+                            <span>Perks and Information</span>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div [innerHTML]="job.otherDescription"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="job.videoUrl" class="apply">
+
+                <div class="image">
+                    <div class="video-container" style="border-radius: 12px; position: relative; width: 100%;">
+                        <iframe 
+                          width="560" 
+                          height="315" 
+                          [src]="safeVideoUrl" 
+                          title="YouTube video player" 
+                          frameborder="0" 
+                          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                          allowfullscreen>
+                        </iframe>
+                      </div>
+                      
+                </div>
+            </div>
+            
+        </div>
+        
+    </section>
+
+
+    <section class="process">
+        <h1>Our <span class="highlight">Process</span></h1>
+
+        <div class="process-image">
+            <img src="/Home/process.png" alt="Our Process">
+        </div>
+
+        <div class="process-image">
+            <img src="/Home/world.png" alt="Our Process">
+        </div>
+    </section>
+
+</div>

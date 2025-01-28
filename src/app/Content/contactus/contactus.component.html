@@ -1,52 +1,6 @@
 <div class="apply-enquiry-container">
     <div class="form-section">
-      <h1>Apply or Enquiry</h1>
-      <!-- <form>
-        <div class="input">
-          <div class="form-group input-form">
-            <label for="name">Name <span>*</span></label>
-            <input type="text" id="name" placeholder="Enter your name" required />
-          </div>
-          <div class="form-group input-form" >
-            <label for="phone">Phone No. <span>*</span></label>
-            <input type="tel" id="phone" placeholder="Enter your phone number" required />
-          </div>
-        </div>
-
-        <div class="form-group" style="width: calc(80% + 50px);">
-          <label for="name">Email <span>*</span></label>
-          <input type="email" id="email" placeholder="Enter your email" required />
-        </div>
-
-        <div class="form-group" style="width: calc(80% + 50px);">
-          <label for="phone">Best time to connect with you <span>*</span></label>
-          <input type="date" id="date" placeholder="Enter Date" required />
-        </div>
-
-        <div class="form-group" style="width: calc(80% + 50px);">
-          <input type="time" id="time" placeholder="Enter Date" required />
-        </div>
-
-        <div class="form-group" style="width: calc(80% + 50px);">
-          <label for="name">City <span>*</span></label>
-          <input type="text" id="name" placeholder="Enter your name" required />
-        </div>
-
-        <div class="form-group" style="width: calc(80% + 50px);">
-          <label for="name">State <span>*</span></label>
-          <input type="text" id="name" placeholder="Enter your name" required />
-        </div>
-
-        <div class="form-group" style="width: calc(80% + 50px);">
-          <label for="name">Country <span>*</span></label>
-          <input type="text" id="name" placeholder="Enter your name" required />
-        </div>
-        <div class="form-group">
-          <label for="cv">Upload CV <span>*</span></label>
-          <input type="file" id="cv" required style="border: none; margin-right: 20px;"/>
-        </div>
-        <button type="submit" class="submit-btn">SUBMIT</button>
-      </form> -->
+      <h1>Get In Touch</h1>
       <form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm)">
         <div class="input">
           <div class="form-group input-form">
@@ -55,7 +9,8 @@
           </div>
           <div class="form-group input-form">
             <label for="phone">Phone No. <span>*</span></label>
-            <input type="tel" id="phone" name="phone_No" ngModel placeholder="Enter your phone number" required />
+            <input type="tel" id="phone" name="phone_No" ngModel placeholder="Enter your phone number" pattern="^[0-9]{10}$" required />
+           
           </div>
         </div>
         <div class="form-group">

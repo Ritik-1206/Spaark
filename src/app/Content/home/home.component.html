@@ -83,7 +83,8 @@
                     </div>
                     <div class="job-buttons">
                         <button class="apply-btn" (click)="navigateTo('contact-us')">APPLY</button>
-                        <button class="desc-btn" (click)="navigateToJobDescription(job.jobID)">JOB DESCRIPTION</button>
+                        <button *ngIf="!job.isInternship" class="desc-btn" (click)="navigateToJobDescription(job.jobID)">JOB DESCRIPTION</button>
+                        <button *ngIf="job.isInternship" class="desc-btn" (click)="navigateToInternDescription(job.jobID)">JOB DESCRIPTION</button>
                     </div>
                 </div>
             </div>
@@ -153,7 +154,7 @@
             </ng-container>
           </swiper-container>
           <div class="view-more-container">
-            <a class="view-more-btn" (click)="navigateTo('reviews')">View More</a>
+            <a class="view-more-btn" (click)="navigateTo('client-reviews')">View More</a>
         </div>
     </section>
 

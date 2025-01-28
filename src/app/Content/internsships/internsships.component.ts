@@ -40,11 +40,7 @@ export class InternsshipsComponent implements OnInit {
     this.http.get<any[]>(this.apiservice.jobApi).subscribe({
       next: (data) => {
         // Filter jobs for internships
-        this.jobs = data.filter(
-          (job) =>
-            job.isInternship === 1 || 
-            (job.openings && job.openings.toLowerCase().includes('internship'))
-        );
+        this.jobs = data.filter((job) => job.isInternship === true && job.isActive === true);
   
         // Display initial jobs
         this.displayedJobs = this.jobs.slice(0, this.currentIndex);
@@ -75,6 +71,6 @@ export class InternsshipsComponent implements OnInit {
   }
 
   navigateToJobDescription(jobId: number): void {
-    this.router.navigate(['/jobs/job-description', jobId]);
+    this.router.navigate(['/internships/internship-description', jobId]);
   }
 }

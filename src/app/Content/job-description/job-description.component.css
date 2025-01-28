@@ -80,13 +80,15 @@
   .apply {
     flex: 1;
     background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
+    /* padding: 20px; */
     border-radius: 8px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .apply .image img{
+    width: 100%;
   }
 .eligible .heading{
     display: flex;
@@ -185,6 +187,35 @@
   }
 
 
+  .process{
+    padding: 20px 50px;
+  }
+
+ .process h1 {
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    border-bottom: 2px solid rgb(232, 230, 230);
+}
+  
+.process h1 .highlight {
+    color: #004B76;
+}
+
+
+.process-image{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.process-image img{
+  width: 60%;
+  height: 70%;
+}
   @media screen and (max-width: 1200px) {
     .input{
         flex-direction: column;
@@ -213,10 +244,6 @@
         font-size: 1.4rem;
     }
 
-    .description{
-        flex-direction: column;
-    }
-
     .input{
         flex-direction: column;
         gap: 10px;
@@ -230,4 +257,22 @@
         padding: 20px;
         border: none;
       }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .description{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+  .video-container {
+    width: 100%; /* Full width on smaller screens */
+  }
+  
+  .video-container iframe {
+    width: 100%; /* Make iframe responsive */
+    height: 100%; /* Maintain aspect ratio */
+  }
 }

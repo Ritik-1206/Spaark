@@ -3,7 +3,9 @@
 .content {
     margin-top: 75px;
 }
-
+.content.no-navbar {
+    margin-top: 0;
+  }
 
 .language-switch{
     padding:10px;
@@ -25,4 +27,58 @@
 .language-switch .lang-btn:hover{
     background-color: #002D46;
     color: #fff;
+}
+
+
+.expandable-icon img {
+    width: 80%;
+    height: auto;
+}
+
+.expandable-icon {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border: 2px solid #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 999;
+    transition: transform 0.2s ease-in-out;
+}
+
+.additional-icons {
+    position: fixed;
+    bottom: 110px;
+    right: 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    z-index: 999; 
+}
+
+.additional-icons .whatsapp , .query{
+    background-color: #fff;
+    height: 40px;
+    width: 40px;
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    border: 1px solid #25D366;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.additional-icons img {
+    width: 75%;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
 }

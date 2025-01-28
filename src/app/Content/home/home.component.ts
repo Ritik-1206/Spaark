@@ -63,7 +63,7 @@ export class HomeComponent {
   fetchJobs(): void {
     this.http.get<any[]>(this.apiservice.jobApi).subscribe({
       next: (data) => {
-        this.jobs = data;
+        this.jobs = data.filter((job) => job.isActive === true);
         this.displayedJobs = this.jobs.slice(0, this.currentIndex);
       },
       error: (error) => {
@@ -75,6 +75,10 @@ export class HomeComponent {
 
   navigateToJobDescription(jobId: number): void {
     this.router.navigate(['/jobs/job-description', jobId]);
+  }
+
+  navigateToInternDescription(jobId: number): void {
+    this.router.navigate(['/internships/internship-description', jobId]);
   }
 
   social_media = [
@@ -106,12 +110,12 @@ export class HomeComponent {
 
   reviews = [
     {
-      imageUrl: '/Home/Reviews/Review_1.jpeg',
+      imageUrl: '/Reviews/Review_1.jpeg',
       text: 'Spaark Overseas is highly professional and trustworthy. They guided me through the entire process, from documentation to interview preparation.',
       author: 'Jaspreet Singh',
     },
     {
-      imageUrl: '/Home/Reviews/Review_2.jpeg',
+      imageUrl: '/Reviews/Review_2.jpeg',
       text: 'Their expertise in the German nursing program is incredible. Spaark Overseas is undoubtedly the best in the business.',
       author: 'Divya Jain',
     },

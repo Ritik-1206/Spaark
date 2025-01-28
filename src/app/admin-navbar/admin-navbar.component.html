@@ -1,0 +1,22 @@
+
+<nav (click)="onNavbarClick($event)" class="navbar">
+    <div class="wrapper">
+      <div class="logo"><img src="SpaarkLogo.png" alt="Logo"></div>
+      <input type="radio" name="slider" id="menu-btn" #menuBtn>
+      <input type="radio" name="slider" id="close-btn">
+      <ul class="nav-links">
+        <label for="close-btn" class="btn close-btn"><i class="ri-close-fill"></i></label>
+
+        <li><a [ngClass]="{ active: activeItem === 'joblist' }"  (click)="setActiveItem('joblist'); navigateTo('admin/joblist')">Jobs</a></li>
+        <li><a [ngClass]="{ active: activeItem === 'bloglist' }"  (click)="setActiveItem('bloglist'); navigateTo('admin/bloglist')">Blogs</a></li>
+        <li><a [ngClass]="{ active: activeItem === 'gallery-images' }"  (click)="setActiveItem('gallery-images'); navigateTo('admin/gallery-images')">Gallery</a></li>
+        <li><a [ngClass]="{ active: activeItem === 'news-articles' }"  (click)="setActiveItem('news-articles'); navigateTo('admin/news-articles')">News</a></li>
+        <li><a>Reviews</a></li>
+        <li><a>Users</a></li>
+        
+        
+      </ul>
+      <label for="menu-btn" class="btn menu-btn"><i class="ri-menu-line"></i></label>
+    </div>
+  </nav>
+  

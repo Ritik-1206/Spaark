@@ -17,22 +17,31 @@ import { HousingComponent } from './Content/GermanyLife/housing/housing.componen
 import { InsuranceComponent } from './Content/GermanyLife/insurance/insurance.component';
 import { SettlingComponent } from './Content/GermanyLife/settling/settling.component';
 import { ReviewsComponent } from './Content/reviews/reviews.component';
+import { InternshipDescriptionComponent } from './Content/internship-description/internship-description.component';
+import { LoginComponent } from './Admin/login/login.component';
+import { AdminJobsComponent } from './Admin/admin-jobs/admin-jobs.component';
+import { AdminBlogsComponent } from './Admin/admin-blogs/admin-blogs.component';
+import { EditblogsComponent } from './Admin/editblogs/editblogs.component';
+import { EditjobsComponent } from './Admin/editjobs/editjobs.component';
+import { AdminGalleryComponent } from './Admin/admin-gallery/admin-gallery.component';
+import { AdminNewsComponent } from './Admin/admin-news/admin-news.component';
+import { OtpComponent } from './Admin/otp/otp.component';
 
 export const routes: Routes = [
 
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'home-page', pathMatch: 'full' },
     { 
-        path: 'home', 
+        path: 'home-page', 
         component: HomeComponent,
-        data: { title: 'Home - Study and Job Opportunities in Germany', description: 'Explore study and job opportunities in Germany, learn about our services and more.' }
+        data: {title: 'Home - Study and Job Opportunities in Germany', description: 'Explore study and job opportunities in Germany, learn about our services and more.' }
     },
     { 
         path: 'jobs', 
         component: JobsComponent,
-        data: { title: 'Jobs in Germany - Job Opportunities', description: 'Find the latest job openings in Germany and apply for your dream job today.' }
+        data: {title: 'Jobs in Germany - Job Opportunities', description: 'Find the latest job openings in Germany and apply for your dream job today.' }
     },
     { 
-        path: 'about', 
+        path: 'about-us', 
         component: AboutComponent,
         data: { title: 'About Us - Your Guide to Germany', description: 'Learn more about our company and how we help people study and find jobs in Germany.' }
     },
@@ -42,7 +51,7 @@ export const routes: Routes = [
         data: { title: 'Internships in Germany - Internship Opportunities', description: 'Explore internship opportunities in Germany to enhance your career prospects.' }
     },
     { 
-        path: 'blogs', 
+        path: 'blog', 
         component: BlogsComponent,
         data: { title: 'Blogs - Study and Work in Germany', description: 'Read our blog to find useful information about studying and working in Germany.' }
     },
@@ -104,7 +113,7 @@ export const routes: Routes = [
 
     },
     { 
-        path: 'reviews', 
+        path: 'client-reviews', 
         component: ReviewsComponent,
         data: { 
             title: 'Reviews - What Our Clients Say', 
@@ -116,6 +125,41 @@ export const routes: Routes = [
         path: 'jobs/job-description/:jobId' , component: JobDescriptionComponent,
     },
     {
-        path: 'blogs/blog-description/:blogId' , component: BlogDescriptionComponent
+        path: 'internships/internship-description/:jobId' , component: InternshipDescriptionComponent,
+    },
+    {
+        path: 'blog/blog-description/:blogId' , component: BlogDescriptionComponent
+    },
+    {
+        path: 'login' , component: LoginComponent,
+        data: {title: 'Login - Admin Panel' }
+    },
+    {
+        path: 'otp' , component: OtpComponent,
+        data: {title: 'Otp validation' }
+    },
+    {
+        path: 'admin/joblist' , component: AdminJobsComponent,
+        data: {title: 'Admin - Jobs Lists' }
+    },
+    {
+        path: 'admin/edit-jobs' , component: EditjobsComponent,
+        data: {title: 'Admin - Jobs Lists' }
+    },
+    {
+        path: 'admin/bloglist' , component: AdminBlogsComponent,
+        data: {title: 'Admin - Blog Lists' }
+    },
+    {
+        path: 'admin/edit-blogs' , component: EditblogsComponent,
+        data: {title: 'Admin - Edit or Add new Blogs' }
+    },
+    {
+        path: 'admin/gallery-images' , component: AdminGalleryComponent,
+        data: {title: 'Admin - Upload Official Images' }
+    },
+    {
+        path: 'admin/news-articles' , component: AdminNewsComponent,
+        data: {title: 'Admin - Upload News Articles' }
     }
 ];

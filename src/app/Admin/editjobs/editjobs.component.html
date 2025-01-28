@@ -1,0 +1,101 @@
+<div class="main">
+    <div class="head">
+        <h1>Add New Program</h1>
+    </div>
+
+    <div class="job-application-form">
+
+        <label for="basic">Basic Information:</label>
+        <div class="form-section">
+
+            <div class="form-row">
+                <!-- Name of the Job -->
+                <div class="form-group">
+                    <label for="job-name">Name of the Job:</label>
+                    <input id="job-name" [(ngModel)]="jobName" name="jobName"/>
+                  </div>
+
+                <!-- Job Location -->
+                <div class="form-group">
+                  <label for="job-location">Job Location:</label>
+                  <input id="job-location" [(ngModel)]="jobLocation" name="jobLocation"/>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <!-- Job Type -->
+                <div class="form-group">
+                  <label for="job-type">Job Type:</label>
+                  <input id="job-type" [(ngModel)]="jobType" name="jobType"/>
+                </div>
+            
+                <!-- Qualification -->
+                <div class="form-group">
+                  <label for="qualification">Qualification:</label>
+                  <input id="qualification" [(ngModel)]="qualification" name="qualification"/>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <!-- Job Type -->
+                <div class="form-group">
+                  <label for="age">Age:</label>
+                  <input id="age" [(ngModel)]="age" name="age"/>
+                </div>
+            
+                <!-- Qualification -->
+                <div class="form-group">
+                  <label for="vedio-url">Vedio URL:</label>
+                  <input id="vedio-url" [(ngModel)]="vediourl" name="vediourl"/>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <!-- File Upload -->
+                <div class="form-group">
+                  <label for="file-upload">Upload File:</label>
+                  <input type="file" id="file-upload" name="fileUpload" (change)="onImageChange($event)" accept=".png, .jpg, .jpeg" />
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div class="content">
+            <label for="description">Description:</label>
+            <div class="NgxEditor__Wrapper">
+                <!-- Fixed Menu Bar -->
+                <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"></ngx-editor-menu>
+                
+                <!-- Scrollable Editor -->
+                <div class="editor-container">
+                    <ngx-editor
+                        [editor]="editor"
+                        [(ngModel)]="html">
+                    </ngx-editor>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="toggle-switch">Show Process Flow Diagram:</label>
+            <div class="toggle-container">
+              <label class="switch">
+                <input
+                  type="checkbox"
+                  id="toggle-switch"
+                  [(ngModel)]="isFeatureEnabled"
+                />
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+
+
+          <div class="save">
+            <button class="btn btn-primary" (click)="saveJob()">Save Blog</button>
+        </div>
+
+    </div>
+
+</div>

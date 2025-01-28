@@ -4,20 +4,25 @@ import { Title, Meta } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { ApiserviceService } from '../../apiservice.service';
 import { FormsModule } from '@angular/forms';
+import Swal from 'sweetalert2'
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contactus',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './contactus.component.html',
   styleUrl: './contactus.component.css'
 })
 export class ContactusComponent {
 
-  constructor(private route: ActivatedRoute, private titleService: Title, private metaService: Meta, private http: HttpClient , private apiervice: ApiserviceService) {}
+  fileToUpload: File | null = null;
+  fileName: string = "";
+
+  constructor(private route: ActivatedRoute, private titleService: Title, private metaService: Meta, private http: HttpClient , private apiservice: ApiserviceService) {}
 
   ngOnInit() {
     const routeData = this.route.snapshot.data;
-    this.titleService.setTitle(routeData['title']);  // Use ['title'] to access
+    this.titleService.setTitle(routeData['title']);
     this.metaService.updateTag({ name: 'description', content: routeData['description'] });  // Use ['description']
   }
 
@@ -25,39 +30,66 @@ export class ContactusComponent {
 
 
   onFileChange(event: any) {
-    const file = event.target.files[0];
-    if (file) {
-      this.cvData = file;
+    if (event.target.files.length > 0) {
+      this.fileToUpload = event.target.files[0];
+      this.fileName = this.fileToUpload?.name || '';
     }
   }
 
   onSubmit(form: any) {
-    if (form.valid && this.cvData) {
-      debugger;
-      const requestBody = {
-        registerID: 0,
-        name: form.value.name,
-        phone_No: form.value.phone_No,
-        email: form.value.email,
-        contactDatetime: `${form.value.date} ${form.value.time}`,
-        city: form.value.city,
-        state: form.value.state,
-        country: form.value.country,
-        cV_Data: this.cvData.name,
-        cV_Filename: this.cvData.name,
-        isActive: true,
-      };
+    if (form.valid) {
 
-      console.log(requestBody);
+      const date = form.value.date;
+      const time = form.value.time;
 
-      this.http.post(this.apiervice.enquire, requestBody).subscribe({
-        next: (response) => console.log('Registration successful', response),
-        error: (err) => console.error('Error during registration', err)
+      const contactDateTime = new Date(`${date}T${time}:00`).toISOString();
+
+      const formData: FormData = new FormData();
+      formData.append('Name', form.value.name);
+      formData.append('Phone_No', form.value.phone_No);
+      formData.append('Email', form.value.email);
+      formData.append('ContactDatetime', contactDateTime);
+      formData.append('City', form.value.city);
+      formData.append('State', form.value.state);
+      formData.append('Country', form.value.country);
+  
+      if (this.fileToUpload) {
+        formData.append('files', this.fileToUpload);
+        formData.append('CV_Filename', this.fileName);
+      }
+
+      this.http.post(this.apiservice.enquire, formData).subscribe({
+
+        next: (response) => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'Form submitted successfully!',
+            confirmButtonText: 'OK',
+          });
+          form.resetForm();
+          this.fileToUpload = null;
+          this.fileName = '';
+        },
+        error: (error) => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Submission Failed',
+            text: `Failed to submit the form. Server returned: ${error.statusText} (${error.status}).`,
+            confirmButtonText: 'OK',
+          });
+        },
       });
     } else {
-      alert('Please fill all the fields and upload a CV.');
+      Swal.fire({
+        icon: 'warning',
+        title: 'Validation Error',
+        text: 'Please fill out all required fields correctly.',
+        confirmButtonText: 'OK',
+      });
     }
   }
+  
 
 
   

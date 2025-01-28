@@ -96,6 +96,28 @@
   width: 35px;
 }
 
+.login{
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.login .icon img {
+  filter: invert(1);
+  width: 20px;
+}
+
+.login .content a{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.login .content a:hover {
+  text-decoration: underline;
+}
+
 .footer-bottom {
   text-align: center;
   border-top: 1px solid #b0afaf;

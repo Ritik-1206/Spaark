@@ -1,0 +1,271 @@
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto Serif', serif;
+  }
+  
+  .main-image{
+      position: relative;
+      box-sizing: border-box;
+      background-size: contain;
+      background-position: center; /* More concise */
+      background-repeat: no-repeat;
+      width: 100%; /* Adjust based on your layout */
+      height: 60vh;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+    }
+    
+    .main-image::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0a4262c9;
+      z-index: 1;
+    }
+    
+    .info {
+      position: relative;
+      display: flex;
+      width: 80%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      border-radius: 8px;
+      color: #fff;
+      text-align: center;
+    }
+  
+    .info h1{
+      font-size: 32px;
+      font-weight: 600;
+    }
+  
+    .job-content{
+      padding: 20px 50px;
+    }
+  
+   .job-content h1 {
+      font-size: 2.3rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      font-weight: 500;
+      border-bottom: 2px solid rgb(232, 230, 230);
+  }
+    
+  .job-content h1 .highlight {
+      color: #004B76;
+  }
+  
+  
+  .description{
+      display: flex;
+      gap: 40px;
+  }
+  
+  .description-content {
+      flex: 2;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    
+    .apply {
+      flex: 1;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  .eligible .heading{
+      display: flex;
+      gap: 20px;
+      align-items: center;
+  }
+  
+  .eligible .heading span{
+      font-size: 1.8rem;
+  }
+  
+  .eligible .heading img{
+      width: 40px;
+  }
+  
+  .eligible .content ul{
+      list-style: none;
+  }
+  
+  .eligible .content ul li{
+      font-size: 14px;
+      line-height: 25px;
+      font-weight: 400;
+  }
+  
+  .benefits .heading{
+      display: flex;
+      gap: 20px;
+      align-items: center;
+  }
+  
+  .benefits .heading img{
+      width: 40px;
+  }
+  .benefits .heading span{
+      font-size: 1.8rem;
+  }
+  
+  .benefits .content ul{
+      list-style: none;
+  }
+  
+  .benefits .content ul li{
+      font-size: 14px;
+      line-height: 25px;
+      font-weight: 400;
+  }
+  
+   .input{
+      display: flex;
+      gap: 50px;
+    }
+  
+    .input .form-group{
+      width: 40%;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+    
+    .form-group label span {
+      color: red;
+    }
+    
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+  
+  
+    .submit-btn {
+      background-color: #004B76;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    
+    .submit-btn:hover {
+      background-color: #003358;
+    }
+  
+  
+    .process{
+      padding: 20px 50px;
+    }
+  
+   .process h1 {
+      font-size: 2.3rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      font-weight: 500;
+      border-bottom: 2px solid rgb(232, 230, 230);
+  }
+    
+  .process h1 .highlight {
+      color: #004B76;
+  }
+  
+  
+  .process-image{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .process-image img{
+    width: 60%;
+    height: 70%;
+  }
+    @media screen and (max-width: 1200px) {
+      .input{
+          flex-direction: column;
+          gap: 10px;
+        }
+  
+        .input .form-group{
+          width: calc(80% + 50px);
+        }
+    }
+  
+  @media screen and (max-width: 768px) {
+  
+    .main-image{
+      height: 45vh;
+    }
+      .job-content{
+          padding: 20px;
+        }
+      
+        .eligible .heading span{
+          font-size: 1.4rem;
+      }
+  
+      .benefits .heading span{
+          font-size: 1.4rem;
+      }
+  
+      .description{
+          flex-direction: column;
+      }
+  
+      .input{
+          flex-direction: column;
+          gap: 10px;
+        }
+    
+        .input .form-group{
+          width: calc(80% + 50px);
+        }
+    
+        .contact-section {
+          padding: 20px;
+          border: none;
+        }
+
+        .process-image{
+            padding: 0%;
+        }
+
+        .process-image img{
+            width: 90%;
+            height: auto;
+          }
+  }

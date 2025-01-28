@@ -6,12 +6,12 @@
       <input type="radio" name="slider" id="close-btn">
       <ul class="nav-links">
         <label for="close-btn" class="btn close-btn"><i class="ri-close-fill"></i></label>
-        <li><a [ngClass]="{ active: activeItem === 'home' }"  (click)="setActiveItem('home'); navigateTo('home')">{{ 'navbar.home' | translate}}</a></li>
-        <li><a [ngClass]="{ active: activeItem === 'about' }"  (click)="setActiveItem('about'); navigateTo('about')">{{ 'navbar.aboutus' | translate}}</a></li>
+        <li><a [ngClass]="{ active: activeItem === 'home-page' }"  (click)="setActiveItem('home-page'); navigateTo('home-page')">{{ 'navbar.home' | translate}}</a></li>
+        <li><a [ngClass]="{ active: activeItem === 'about-us' }"  (click)="setActiveItem('about-us'); navigateTo('about-us')">{{ 'navbar.aboutus' | translate}}</a></li>
         <li><a [ngClass]="{ active: activeItem === 'jobs' }"  (click)="setActiveItem('jobs'); navigateTo('jobs')">{{ 'navbar.jobs' | translate}}</a></li>
         <li><a [ngClass]="{ active: activeItem === 'internships' }" (click)="setActiveItem('internships'); navigateTo('internships')">{{ 'navbar.internships' | translate}}</a></li>
         <li><a [ngClass]="{ active: activeItem === 'service' }" (click)="setActiveItem('service'); navigateTo('service')">{{ 'navbar.services' | translate}}</a></li>
-        <li><a [ngClass]="{ active: activeItem === 'blogs' }" (click)="setActiveItem('blogs'); navigateTo('blogs')">{{ 'navbar.blogs' | translate}}</a></li>
+        <li><a [ngClass]="{ active: activeItem === 'blog' }" (click)="setActiveItem('blog'); navigateTo('blog')">{{ 'navbar.blogs' | translate}}</a></li>
         
         <li>
           <a [ngClass]="{ active: isDropdownActive() }" (click)="setActiveItem('more')" class="desktop-item">

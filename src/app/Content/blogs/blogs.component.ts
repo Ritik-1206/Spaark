@@ -41,7 +41,8 @@ export class BlogsComponent {
   fetchBlogs(): void {
     this.http.get<any[]>(this.apiservice.blogApi).subscribe({
       next: (data) => {
-        this.blogs = data.map((blog) => {
+        const activeBlogs = data.filter(blog => blog.isActive);
+        this.blogs = activeBlogs.map((blog) => {
           const div = document.createElement('div');
           div.innerHTML = blog.description || '';
 
@@ -61,6 +62,7 @@ export class BlogsComponent {
 
         this.displayedBlogs = this.blogs.slice(0, this.currentDisplayCount);
 
+        debugger;
         this.mostRead = this.blogs.slice(1, 5).map((blog) => ({
           image: blog.imageUrl || '/default-image.png',
           title: this.trimText(blog.title || 'Untitled Blog', 60),
@@ -91,7 +93,7 @@ export class BlogsComponent {
   }
 
   navigateToBlogDescription(blogId: number): void {
-    this.router.navigate(['blogs/blog-description', blogId]);
+    this.router.navigate(['blog/blog-description', blogId]);
     
   }
 }

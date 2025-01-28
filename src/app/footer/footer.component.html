@@ -2,8 +2,13 @@
   <div class="footer-subscription">
     <h2>Stay updated with Spaark Overseas</h2>
     <div class="subscription">
-      <input type="email" placeholder="Enter Email ID" class="footer-input" />
-      <button class="footer-button">Subscribe Now</button>
+      <input 
+        type="email" 
+        #emailInput 
+        placeholder="Enter Email ID" 
+        class="footer-input" 
+      />
+      <button class="footer-button" (click)="onSubscribe(emailInput.value , emailInput)">Subscribe Now</button>
     </div>
   </div>
 
@@ -13,12 +18,12 @@
     <div class="footer-section">
       <h3>Menu</h3>
       <ul class="footer-menu">
-        <li><a (click)="navigateTo('home')">Home</a></li>
-        <li><a (click)="navigateTo('about')">About Us</a></li>
+        <li><a (click)="navigateTo('home-page')">Home</a></li>
+        <li><a (click)="navigateTo('about-us')">About Us</a></li>
         <li><a (click)="navigateTo('jobs')">Jobs</a></li>
         <li><a (click)="navigateTo('internships')">Abroad Internships</a></li>
         <li><a (click)="navigateTo('service')">Our Services</a></li>
-        <li><a (click)="navigateTo('blogs')">Blogs</a></li>
+        <li><a (click)="navigateTo('blog')">Blogs</a></li>
         <li><a (click)="navigateTo('why-germany')">Why Germany?</a></li>
       </ul>
     </div>
@@ -66,6 +71,15 @@
         <a href="https://www.facebook.com/spaarkoverseasofficial/"><img src="/Footer/facebook.png" alt="Facebook"/></a>
         <a href="https://www.linkedin.com/company/spaark-overseas-noida/"><img src="/Footer/linkedin.png" alt="LinkedIn"/></a>
         <a href="https://www.youtube.com/@spaarkoverseasofficial/"><img src="/Footer/youtube.png" alt="Youtube"/></a>
+      </div>
+
+      <div class="login">
+        <div class="icon">
+          <a href="#"><img src="/Footer/login.png" alt="Login"/></a>
+        </div>
+        <div class="content">
+          <a (click)="navigateTo('login')">Admin Login</a>
+        </div>
       </div>
     </div>
 

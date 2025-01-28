@@ -1,0 +1,43 @@
+<div class="main">
+    
+    <div class="head">
+        <h1>Programs</h1>
+        <div class="add-job">
+            <button (click)="navigateTo('admin/edit-jobs')"><i class="ri-add-fill" style="margin-right: 10px;"></i>Add New Job</button>
+        </div>
+    </div>
+
+
+    <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>S. No.</th>
+              <th>Title</th>
+              <th>Location</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let job of jobs; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ job.title }}</td>
+              <td>{{ job.location }}</td>
+              <td>{{ job.isInternship ? 'Internship' : 'Job' }}</td>
+              <td>{{ job.isActive ? 'Active' : 'Inactive' }}</td>
+              <td>
+                <button *ngIf="job.isActive" (click)="hideJob(job)">
+                  <i class="ri-eye-off-line"></i> Hide
+                </button>
+                <button *ngIf="!job.isActive" (click)="showJob(job)">
+                  <i class="ri-eye-line"></i> Show
+                </button>
+                <button class="delete-btn"><i class="ri-delete-bin-5-line"></i>Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>

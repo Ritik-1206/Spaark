@@ -1,0 +1,32 @@
+<div class="main" >
+
+    <div class="title">
+        <input class="form-control" [(ngModel)]="title"  type="text" placeholder="Enter Blog Title">
+    </div>
+
+    <div class="image">
+        <input type="file" id="image" (change)="onImageChange($event)" accept=".png, .jpg, .jpeg"  required />
+    </div>
+
+    <div class="content">
+        <div class="NgxEditor__Wrapper">
+            <!-- Fixed Menu Bar -->
+            <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"></ngx-editor-menu>
+            
+            <!-- Scrollable Editor -->
+            <div class="editor-container">
+                <ngx-editor
+                    [editor]="editor"
+                    [(ngModel)]="html">
+                </ngx-editor>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="save">
+        <button class="btn btn-primary" (click)="saveBlog()">Save Blog</button>
+    </div>
+    
+      
+</div>

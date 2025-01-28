@@ -16,6 +16,7 @@ export class BlogDescriptionComponent implements OnInit {
   blogID: number = 0;
   blog: any;
   blogs: any[] = [];
+  blogUrl: string = '';
 
   constructor(private sanitizer: DomSanitizer ,
     private route: ActivatedRoute,
@@ -31,13 +32,13 @@ export class BlogDescriptionComponent implements OnInit {
       this.blogID = +blogIdParam; // Convert to number
       this.fetchBlogContent();
     } else {
-      console.error('jobId is missing');
+      //console.error('jobId is missing');
     }
   }
 
   fetchBlogContent(): void {
-    const apiUrl = `https://webspaarkapi.azurewebsites.net/api/blogs/${this.blogID}`
-      this.http.get<any[]>(apiUrl).subscribe({
+    this.blogUrl = this.apiservice.getBlogUrl(this.blogID);
+      this.http.get<any[]>(this.blogUrl).subscribe({
         next: (data) => {
           this.blogs = data;
           this.blog = data;

@@ -42,7 +42,7 @@ export class JobsComponent implements OnInit {
   fetchJobs(): void {
     this.http.get<any[]>(this.apiservice.jobApi).subscribe({
       next: (data) => {
-        this.jobs = data;
+        this.jobs = data.filter((job) => job.isInternship === false && job.isActive === true);
         this.displayedJobs = this.jobs.slice(0, this.currentIndex);
       },
       error: (error) => {

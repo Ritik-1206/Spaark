@@ -1,0 +1,40 @@
+<div class="main">
+    
+    <div class="head">
+        <h1>Blogs List</h1>
+        <div class="add-job">
+            <button (click)="navigateTo('admin/edit-blogs')"><i class="ri-add-fill" style="margin-right: 10px;" ></i>Add New Blog</button>
+        </div>
+    </div>
+
+
+    <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>S. No.</th>
+              <th>Title</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let blog of blogs; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ blog.title | slice:0:100 }}</td>
+              <td>{{ blog.isActive ? 'Active' : 'Inactive' }}</td>
+              <td>
+                <button *ngIf="blog.isActive" (click)="hideBlog(blog)">
+                  <i class="ri-eye-off-line"></i> Hide
+                </button>
+                <button *ngIf="!blog.isActive" (click)="showBlog(blog)">
+                  <i class="ri-eye-line"></i> Show
+                </button>
+              
+                <button class="delete-btn" (click)="deleteBlog(blog.blogID)"><i class="ri-delete-bin-5-line"></i>Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>

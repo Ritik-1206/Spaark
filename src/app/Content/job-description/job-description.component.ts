@@ -4,6 +4,7 @@ import { ApiserviceService } from '../../apiservice.service';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Location } from '@angular/common';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-job-description',
@@ -16,11 +17,14 @@ export class JobDescriptionComponent implements OnInit {
   jobID: number = 0;
   job: any;
   jobs: any[] = [];
+  jobUrl: string = '';
+  safeVideoUrl: SafeResourceUrl | null = null; // To store the sanitized video URL
 
   constructor(
     private route: ActivatedRoute,
     private apiservice: ApiserviceService,
     private http: HttpClient,
+    private sanitizer: DomSanitizer
   ) {
 
   }
@@ -36,15 +40,23 @@ export class JobDescriptionComponent implements OnInit {
   }
 
   fetchJobDetails(): void {
-    const apiUrl = `https://webspaarkapi.azurewebsites.net/api/jobs/${this.jobID}`
-      this.http.get<any[]>(apiUrl).subscribe({
+    this.jobUrl = this.apiservice.getJobUrl(this.jobID);
+      this.http.get<any[]>(this.jobUrl).subscribe({
         next: (data) => {
-          this.jobs = data;
+          //this.jobs = data;
           this.job = data;
+          console.log(this.job.videoUrl);
+
+          this.safeVideoUrl = this.sanitizeUrl(this.job.videoUrl);
         },
         error: (error) => {
           console.error('Error fetching jobs:', error);
         },
       });
   }
+
+  sanitizeUrl(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+
 }
