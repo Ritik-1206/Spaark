@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ApiserviceService } from '../../apiservice.service';
 import Swal from 'sweetalert2';
@@ -11,9 +11,10 @@ import Swal from 'sweetalert2';
   templateUrl: './reviews.component.html',
   styleUrl: './reviews.component.css'
 })
-export class ReviewsComponent {
+export class ReviewsComponent implements OnInit {
 
   isFormVisible = false;
+  reviews: any = [];
   name: string = '';
   companyname: string = '';
   designation: string = '';
@@ -27,6 +28,9 @@ export class ReviewsComponent {
     return this.emailRegex.test(this.email);
   }
 
+  ngOnInit(): void {
+    this.getReviews();
+  }
   isValidPhone(): boolean {
     const sanitizedPhone = this.phone.replace(/\D/g, '');
 
@@ -49,51 +53,6 @@ export class ReviewsComponent {
     this.review = '';
   }
 
-  reviews = [
-    {
-      imageUrl: '/Reviews/Review_1.jpeg',
-      text: 'Spaark Overseas is highly professional and trustworthy. They guided me through the entire process, from documentation to interview preparation.',
-      author: 'Jaspreet Singh',
-      rating: 4.5
-    },
-    {
-      imageUrl: '/Reviews/Review_2.jpeg',
-      text: 'Their expertise in the German nursing program is incredible. Spaark Overseas is undoubtedly the best in the business.',
-      author: 'Divya Jain',
-      rating: 5.0
-    },
-    {
-      imageUrl: '/Reviews/Review_3.jpeg',
-      text: 'I was skeptical at first, but Spaark Overseas delivered on all their promises. I’m now part of the Ausbildung program in Germany. Thank you',
-      author: 'Abhinav Singh',
-      rating: 4.0
-    },
-    {
-      imageUrl: '/Reviews/Review_4.jpeg',
-      text: 'Thanks to Spaark Overseas, I am now working as a physiotherapist in Germany. They are the best placement agency for healthcare professionals.',
-      author: 'Sachin Rao',
-      rating: 5.0
-    },
-    {
-      imageUrl: '/Reviews/Review_5.jpeg',
-      text: 'The Ausbildung program through Spaark Overseas has changed my life. They were with me at every step and made the transition to Germany effortless.',
-      author: 'Vivek Gupta',
-      rating: 5.0
-    },
-    {
-      imageUrl: '/Reviews/Review_6.jpeg',
-      text: 'I cannot thank Spaark Overseas enough for guiding me through the German Nursing program. The entire process was smooth, and their support was outstanding. Highly recommended!',
-      author: 'Amit Sharma',
-      rating: 5.0
-    },
-    {
-      imageUrl: '/Reviews/Review_7.jpeg',
-      text: 'I had a fantastic experience with Spaark Overseas. They are experts in German placements and very supportive.',
-      author: 'Rohit Jain',
-      rating: 5.0
-    }
-  ];
-
   generateStars(rating: number | undefined): string[] {
     const stars = [];
     const actualRating = rating ?? 0; // Use 0 if rating is undefined
@@ -110,6 +69,17 @@ export class ReviewsComponent {
       stars.push('empty');
     }
     return stars;
+  }
+
+  getReviews(): void {
+    this.http.get<any[]>(this.apiservice.reviews).subscribe({
+      next: (data) => {
+        this.reviews = data.filter((review) => review.isActive === true);
+      },
+      error: (error) => {
+        console.error('Error fetching reviews:', error);
+      },
+    });
   }
 
   submitReview(): void {

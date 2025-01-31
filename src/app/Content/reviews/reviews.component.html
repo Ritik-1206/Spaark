@@ -12,11 +12,11 @@
                   <img 
                     class="author-image" 
                     [src]="review.imageUrl" 
-                    [alt]="'Image of ' + review.author" 
+                    [alt]="'Image of ' + review.name" 
                   />
-                  <p class="author-name">{{ review.author }}</p>
+                  <p class="author-name">{{ review.name }}</p>
                 </div>
-                <p class="review-text">{{ review.text }}</p>
+                <p class="review-text">{{ review.review }}</p>
               </div>
         </div>
     </section>

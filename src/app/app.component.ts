@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         const currentUrl = event.urlAfterRedirects;
-        this.showNavbarFooter = !currentUrl.includes('login') && !currentUrl.includes('admin') && !currentUrl.includes('otp');
+        this.showNavbarFooter = !currentUrl.includes('login') && !currentUrl.includes('admin') && !currentUrl.includes('reset-password');
         this.isadmin = currentUrl.includes('admin');
       });
   }
@@ -61,7 +61,7 @@ export class AppComponent implements OnInit {
   }
 
   openWhatsApp(): void {
-    const phoneNumber = '7827085933';
+    const phoneNumber = '918920019466';
     const url = `https://wa.me/${phoneNumber}`;
     window.open(url, '_blank');
     this.isExpanded = false; 

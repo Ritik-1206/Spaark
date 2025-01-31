@@ -1,0 +1,32 @@
+<div class="modal-overlay" *ngIf="isOpen">
+    <div class="modal-content">
+
+        <div class="heading">
+            <div class="title">
+                <h2>Create New User</h2>
+            </div>
+            <a (click)="closeModal()" style="font-size: 24px; cursor: pointer;"><i class="ri-close-large-fill"></i></a>
+        </div>
+
+        <div class="query-form">
+            <div class="form-group">
+                <label for="name">Username:</label>
+                <input type="text" placeholder="Username" [(ngModel)]="name" id="name" />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" placeholder="Email" [(ngModel)]="email" id="email"/>
+            </div>
+
+
+            <div class="form-group">
+                <label for="query">Phone:</label>
+                <input type="text" placeholder="Phone Number" [(ngModel)]="phone" id="phone"/>
+            </div>
+        </div>
+      
+        <button (click)="CreateUser()">Create</button>
+    </div>
+  </div>
+  

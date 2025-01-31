@@ -39,6 +39,13 @@ export class InternshipDescriptionComponent {
     }
   }
 
+  getSafeImageUrl(imageUrl: string) {
+    const formattedUrl = imageUrl.replace(/\\/g, '/');
+    return formattedUrl; // Encodes spaces and special characters properly
+  }
+
+  
+
   fetchJobDetails(): void {
     this.jobUrl = this.apiservice.getInternUrl(this.jobID);
       this.http.get<any[]>(this.jobUrl).subscribe({

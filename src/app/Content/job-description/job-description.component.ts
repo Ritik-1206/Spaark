@@ -18,6 +18,7 @@ export class JobDescriptionComponent implements OnInit {
   job: any;
   jobs: any[] = [];
   jobUrl: string = '';
+  urlImage : string = '';
   safeVideoUrl: SafeResourceUrl | null = null; // To store the sanitized video URL
 
   constructor(
@@ -27,6 +28,11 @@ export class JobDescriptionComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) {
 
+  }
+
+  getSafeImageUrl(imageUrl: string) {
+    const formattedUrl = imageUrl.replace(/\\/g, '/');
+    return formattedUrl; // Encodes spaces and special characters properly
   }
 
   ngOnInit(): void {
@@ -45,7 +51,8 @@ export class JobDescriptionComponent implements OnInit {
         next: (data) => {
           //this.jobs = data;
           this.job = data;
-          console.log(this.job.videoUrl);
+          this.urlImage = this.job.imageUrl;
+          console.log('Image_URL',this.job.imageUrl);
 
           this.safeVideoUrl = this.sanitizeUrl(this.job.videoUrl);
         },

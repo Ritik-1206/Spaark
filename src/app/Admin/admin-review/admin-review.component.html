@@ -1,0 +1,46 @@
+<div class="main">
+    
+    <div class="head">
+        <h1>Reviews List</h1>
+    </div>
+
+
+    <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>S. No.</th>
+              <th>Name</th>
+              <th>Review</th>
+              <th>Status</th>
+              <th>Image</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let review of reviews; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ review.name }}</td>
+                <td>{{ review.review | slice:0:100  }}</td>
+                <td>{{ review.isActive ? 'Active' : 'Inactive' }}</td>
+                <td>
+                    <button (click)="triggerFileInput(review.reviewID)">
+                        <i class="ri-add-fill" style="margin-right: 10px;"></i>Upload
+                    </button>
+                    <input type="file" #fileInput style="display: none;" (change)="onFileChange($event)" />
+                </td>
+                <td>
+                  <!-- <button *ngIf="review.isActive" (click)="hideReview(review)">
+                    <i class="ri-eye-off-line"></i> Hide
+                  </button>
+                  <button *ngIf="!review.isActive" (click)="showReview(review)">
+                    <i class="ri-eye-line"></i> Show
+                  </button> -->
+                
+                  <button class="delete-btn" (click)="deleteReview(review.reviewID)"><i class="ri-delete-bin-5-line"></i>Delete</button>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+</div>

@@ -2,15 +2,15 @@
     <section class="home-image">
         <div class="info">
             <div class="content">
-                <span class="quantity">200+</span>
+                <span class="quantity">{{candidatesPlaced}}+</span>
                 <span>Candidates Placed</span>
             </div>
             <div class="content">
-                <span class="quantity">10+</span>
+                <span class="quantity">{{globalEmployers}}</span>
                 <span>Global Employers</span>
             </div>
             <div class="content">
-                <span class="quantity">98%</span>
+                <span class="quantity">{{visaSuccessRate}}%</span>
                 <span>Visa Success Rate</span>
             </div>
         </div>
@@ -115,11 +115,19 @@
         <div class="heading">
             <h2><span style="color: black;">Our</span> News Feed</h2>
         </div>
-        <swiper-container class="mySwiper" space-between="30" autoplay-delay="3500" autoplay-disable-on-interaction="false" loop="true"  breakpoints='{"640": {"slidesPerView": 1}, "768": {"slidesPerView": 2}, "1024": {"slidesPerView": 3}}'>
-            <swiper-slide><div class="news-card"><img src="/Home/news1.png" alt="News about Spaark Overseas"></div></swiper-slide>
+        <swiper-container ngSkipHydration class="mySwiper" space-between="30" autoplay-delay="3500" autoplay-disable-on-interaction="false" loop="true"  breakpoints='{"640": {"slidesPerView": 1}, "768": {"slidesPerView": 2}, "1024": {"slidesPerView": 3}}'>
+            <!-- <swiper-slide><div class="news-card"><img src="/Home/news1.png" alt="News about Spaark Overseas"></div></swiper-slide>
             <swiper-slide><div class="news-card"><img src="/Home/news2.png" alt="News about Spaark Overseas"></div></swiper-slide>
             <swiper-slide><div class="news-card"><img src="/Home/news3.png" alt="News about Spaark Overseas"></div></swiper-slide>
-            <swiper-slide><div class="news-card"><img src="/Home/news4.jpeg" alt="News about Spaark Overseas"></div></swiper-slide>
+            <swiper-slide><div class="news-card"><img src="/Home/news4.jpeg" alt="News about Spaark Overseas"></div></swiper-slide> -->
+            <ng-container *ngFor="let image of newsImages">
+                <swiper-slide>
+                    <div class="news-card">
+                      <img [src]="image.filePath" alt="News about Spaark Overseas" />
+                    </div>
+                  </swiper-slide>
+            </ng-container>
+            
         </swiper-container>
     </section>
 
@@ -143,12 +151,12 @@
             <ng-container *ngFor="let review of reviews">
               <swiper-slide class="review-card">
                 <div class="carousel-item">
-                    <img class="review-image" [src]="review.imageUrl" [alt]="'Image of ' + review.author" 
+                    <img class="review-image" [src]="review.imageUrl" [alt]="'Image of ' + review.name" 
                   />
                   <p class="review-text">
-                    {{ review.text.length > 80 ? (review.text | slice:0:80) + '...' : review.text }}
+                    {{ review.review.length > 80 ? (review.review | slice:0:80) + '...' : review.review }}
                   </p>
-                  <p class="review-author">{{ review.author }}</p>
+                  <p class="review-author">{{ review.name }}</p>
                 </div>
               </swiper-slide>
             </ng-container>

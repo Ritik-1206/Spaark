@@ -1,7 +1,7 @@
 <div class="login-container">
     <div class="login-box">
       <img src="SpaarkLogo.png" alt="Magic Billion Logo" class="logo" />
-      <div>
+      <div *ngIf="!isOtp">
         <div class="form-group">
           <input type="text" placeholder="Username" [(ngModel)]="username" class="form-control" />
         </div>
@@ -10,8 +10,15 @@
         </div>
         <button type="submit" class="btn-login" (click)="login()">Log in</button>
         <div class="links">
-          <a href="#" class="forgot-password">Forgot your password?</a>
+          <a class="forgot-password" (click)="navigateTo('reset-password')">Forgot your password?</a>
         </div>
+      </div>
+
+      <div *ngIf="isOtp">
+        <div class="form-group">
+          <input type="text" placeholder="OTP" [(ngModel)]="otp" class="form-control" />
+        </div>
+        <button type="submit" class="btn-login" (click)="validateOtp()">Verify</button>
       </div>
     </div>
   </div>

@@ -18,8 +18,9 @@ import { link } from 'fs';
 })
 export class AboutComponent {
   isClient = false;
+  galleryImages: any = [];
 
-  constructor(private route: ActivatedRoute, private translateService: TranslateService, private titleService: Title, private metaService: Meta)
+  constructor(private route: ActivatedRoute, private http: HttpClient , private apiservice: ApiserviceService, private translateService: TranslateService, private titleService: Title, private metaService: Meta)
    {
     if (typeof window !== 'undefined') {
       this.isClient = true;
@@ -32,6 +33,7 @@ export class AboutComponent {
     this.titleService.setTitle(routeData['title']);  // Use ['title'] to access
     this.metaService.updateTag({ name: 'description', content: routeData['description'] });  // Use ['description']
     this.loadTranslations();
+    this.getGalleryImages()
   }
 
   members = [
@@ -45,36 +47,23 @@ export class AboutComponent {
   ];
 
   employees = [
-    { name: 'Mrs Aashita', image: '/About/Aashita.png' , profile: 'Co Founder'},
-    { name: 'Ms Priya Ojha', image: '/About/PriyaOjha.png' , profile: 'HR Head'},
-    { name: 'Mr Adarsh Pandey', image: '/About/AdarshPandey.png' , profile: 'Business Development'},
-    { name: 'Mr Paras Bisht', image: '/About/ParasBisht.png' , profile: 'Senior Career Counsellor'},
-    { name: 'Mr Aryan Yadav', image: '/About/AryanYadav.png' , profile: 'Digital Marketing'},
+    { name: 'Mrs Aashita', image: '/About/Aashita.png' , profile: 'Co Founder' , linkedIn : 'https://www.linkedin.com/in/aashita-goel-4932b9298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'},
+    { name: 'Ms Priya Ojha', image: '/About/PriyaOjha.png' , profile: 'HR Head' ,linkedIn : 'https://www.linkedin.com/in/priya-ojha-a468b52ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'},
+    { name: 'Mr Adarsh Pandey', image: '/About/AdarshPandey.png' , profile: 'Business Development' , linkedIn : 'https://www.linkedin.com/in/adarsh-pandey-08a776305?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'},
+    { name: 'Mr Paras Bisht', image: '/About/ParasBisht.png' , profile: 'Senior Career Counsellor' , linkedIn : 'https://www.linkedin.com/in/paras-bisht-0367b9257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'},
+    { name: 'Mr Aryan Yadav', image: '/About/AryanYadav.png' , profile: 'Digital Marketing' , linkedIn : 'https://www.linkedin.com/in/aryan-yadav-7077aa2bb?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'},
   ];
 
-  galleryImages = [
-    { image_url: "/Gallery/Image_1.jpeg", title: "Image_1" },
-    { image_url: "/Gallery/Image_2.jpeg", title: "Image_2" },
-    { image_url: "/Gallery/Image_3.jpeg", title: "Image_3" },
-    { image_url: "/Gallery/Image_4.jpeg", title: "Image_4" },
-    { image_url: "/Gallery/Image_5.jpeg", title: "Image_5" },
-    { image_url: "/Gallery/Image_6.jpeg", title: "Image_6" },
-    { image_url: "/Gallery/Image_7.jpeg", title: "Image_7" },
-    { image_url: "/Gallery/Image_8.jpeg", title: "Image_8" },
-    { image_url: "/Gallery/Image_9.jpeg", title: "Image_9" },
-    { image_url: "/Gallery/Image_10.jpeg", title: "Image_10" },
-    { image_url: "/Gallery/Image_11.jpeg", title: "Image_11" },
-    { image_url: "/Gallery/Image_12.jpeg", title: "Image_12" },
-    { image_url: "/Gallery/Image_13.jpeg", title: "Image_13" },
-    { image_url: "/Gallery/Image_14.jpeg", title: "Image_14" },
-    { image_url: "/Gallery/Image_15.jpeg", title: "Image_15" },
-    { image_url: "/Gallery/Image_16.jpeg", title: "Image_16" },
-    { image_url: "/Gallery/Image_17.jpeg", title: "Image_17" },
-    { image_url: "/Gallery/Image_18.jpeg", title: "Image_18" },
-    { image_url: "/Gallery/Image_19.jpeg", title: "Image_19" },
-    { image_url: "/Gallery/Image_20.jpeg", title: "Image_20" },
-    { image_url: "/Gallery/Image_21.jpeg", title: "Image_20" }
-    ];
+    getGalleryImages(): void {
+      this.http.get<any[]>(this.apiservice.images).subscribe({
+        next: (data) => {
+          this.galleryImages = data.filter((images) => images.isNews === false);
+        },
+        error: (error) => {
+          console.error('Error fetching jobs:', error);
+        },
+      });
+    }
   
 
   loadTranslations(): void {

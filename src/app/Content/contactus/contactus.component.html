@@ -25,6 +25,16 @@
           <label for="time">Best time to connect (Time) <span>*</span></label>
           <input type="time" id="time" name="time" ngModel required />
         </div>
+
+        <div class="form-group">
+          <label for="job">Program <span>*</span></label>
+          <select id="job" name="job" ngModel required>
+            <option value="" disabled selected>Select Program</option>
+            <option *ngFor="let program of programs" [value]="program.title">{{ program.title }} ({{ program.location }})</option>
+          </select>
+        </div>
+        
+        
         <div class="form-group">
           <label for="city">City <span>*</span></label>
           <input type="text" id="city" name="city" ngModel placeholder="Enter your city" required />

@@ -11,12 +11,31 @@
         <li><a [ngClass]="{ active: activeItem === 'bloglist' }"  (click)="setActiveItem('bloglist'); navigateTo('admin/bloglist')">Blogs</a></li>
         <li><a [ngClass]="{ active: activeItem === 'gallery-images' }"  (click)="setActiveItem('gallery-images'); navigateTo('admin/gallery-images')">Gallery</a></li>
         <li><a [ngClass]="{ active: activeItem === 'news-articles' }"  (click)="setActiveItem('news-articles'); navigateTo('admin/news-articles')">News</a></li>
-        <li><a>Reviews</a></li>
-        <li><a>Users</a></li>
-        
-        
+        <li><a [ngClass]="{ active: activeItem === 'manage-reviews' }"  (click)="setActiveItem('manage-reviews'); navigateTo('admin/manage-reviews')">Reviews</a></li>
+
+        <li class="logout">
+          <a class="profile-icon"><i class="ri-user-line"></i> </a>
+          <ul class="dropdown-menu">
+            <li (click)="openCreateUserModal()"><a >Create User</a></li>
+            <li (click)="logout()"><a >Logout</a></li>
+          </ul>
+        </li>
+
+        <li class="mobile-view create-user">
+          <a (click)="openCreateUserModal()">Create User</a>
+        </li>
+
+        <li (click)="logout()" class="mobile-view logout-btn">
+          <a>Log Out</a>
+        </li>
       </ul>
+      
+
+  
+
       <label for="menu-btn" class="btn menu-btn"><i class="ri-menu-line"></i></label>
     </div>
   </nav>
   
+
+  <app-create-user [isOpen]="isCreateUserModalOpen" (close)="closeCreateUserModal()"></app-create-user>

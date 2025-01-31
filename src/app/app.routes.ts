@@ -25,6 +25,8 @@ import { EditblogsComponent } from './Admin/editblogs/editblogs.component';
 import { EditjobsComponent } from './Admin/editjobs/editjobs.component';
 import { AdminGalleryComponent } from './Admin/admin-gallery/admin-gallery.component';
 import { AdminNewsComponent } from './Admin/admin-news/admin-news.component';
+import { adminGuard } from './Admin/admin.guard';
+import { AdminReviewComponent } from './Admin/admin-review/admin-review.component';
 import { OtpComponent } from './Admin/otp/otp.component';
 
 export const routes: Routes = [
@@ -135,31 +137,42 @@ export const routes: Routes = [
         data: {title: 'Login - Admin Panel' }
     },
     {
-        path: 'otp' , component: OtpComponent,
-        data: {title: 'Otp validation' }
+        path: 'reset-password' , component: OtpComponent,
+        data: {title: 'Reset Password - Admin Panel' }
     },
     {
         path: 'admin/joblist' , component: AdminJobsComponent,
+        canActivate: [adminGuard],
         data: {title: 'Admin - Jobs Lists' }
     },
     {
         path: 'admin/edit-jobs' , component: EditjobsComponent,
+        canActivate: [adminGuard],
         data: {title: 'Admin - Jobs Lists' }
     },
     {
         path: 'admin/bloglist' , component: AdminBlogsComponent,
+        canActivate: [adminGuard],
         data: {title: 'Admin - Blog Lists' }
     },
     {
         path: 'admin/edit-blogs' , component: EditblogsComponent,
+        canActivate: [adminGuard],
         data: {title: 'Admin - Edit or Add new Blogs' }
     },
     {
         path: 'admin/gallery-images' , component: AdminGalleryComponent,
+        canActivate: [adminGuard],
         data: {title: 'Admin - Upload Official Images' }
     },
     {
+        path: 'admin/manage-reviews' , component: AdminReviewComponent,
+        canActivate: [adminGuard],
+        data: {title: 'Admin - Manage Reviews' }
+    },
+    {
         path: 'admin/news-articles' , component: AdminNewsComponent,
+        canActivate: [adminGuard],
         data: {title: 'Admin - Upload News Articles' }
     }
 ];

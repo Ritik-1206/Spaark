@@ -27,14 +27,19 @@
     justify-content: space-between;
   }
   
-  .desktop-item i,
   .mobile-item i {
     font-size: 16px;
     margin-left: 5px;
     vertical-align: middle;
     transition: transform 0.3s ease;
   }
-  
+
+  .desktop-item i {
+    font-size: 16px;
+    margin-left: 5px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+  }
   #showDrop:checked ~ .drop-menu ~ label i {
     transform: rotate(180deg);
   }
@@ -66,10 +71,72 @@
     border-radius: 5px;
     transition: all 0.3s ease;
   }
-  
+
+  .nav-links .logout a{
+    font-size: 15px;
+    font-weight: 500;
+    padding: 6px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
   .nav-links li a:hover {
     background: #002D46;
     color: #FFFFFF;
+  }
+  
+
+  .nav-links .logout .profile-icon:hover {
+    background: #FFFFFF;
+    color: #002D46;
+  }
+
+  .nav-links .mobile-view{
+    display: none !important;
+  }
+
+
+
+  .nav-links .logout a i{
+    font-size: 24px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 5px;
+  }
+
+  .nav-links .logout .dropdown-menu{
+    position: absolute;
+    background: #fff;
+    width: 150px;
+    color: #fff;
+    line-height: 45px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+  }
+
+  .nav-links .logout .dropdown-menu li{
+    cursor: pointer;
+  }
+
+  .nav-links .logout:hover .dropdown-menu{
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+    right: 30px;
+  }
+
+  .nav-links .logout .dropdown-menu li:hover{
+    background-color: #002D46;
+    color: white;
+  }
+
+  .nav-links .logout .dropdown-menu li:hover a{
+    color: white;
   }
   
   .nav-links li a.active {
@@ -85,40 +152,6 @@
     display: none;
   }
   
-  .nav-links .drop-menu {
-    position: absolute;
-    background: #fff;
-    width: 180px;
-    color: #fff;
-    line-height: 45px;
-    top: 85px;
-    opacity: 0;
-    visibility: hidden;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 6px;
-  }
-  
-  .nav-links li:hover .drop-menu {
-    transition: all 0.3s ease;
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
-    right: 60px;
-  }
-  
-  .drop-menu li a {
-    width: 100%;
-    display: block;
-    color: #002D46;
-    padding: 0 0 0 15px;
-    font-weight: 400;
-    border-radius: 0px;
-  }
-  
-  .drop-menu li a:hover {
-    background: #002D46;
-    color: #FFFFFF;
-  }
   
   .wrapper .btn {
     color: #3A3B3C;
@@ -132,6 +165,7 @@
     right: 30px;
     top: 10px;
   }
+
   
   @media screen and (max-width: 1100px) {
     .wrapper .btn {
@@ -142,7 +176,18 @@
       height: 60px;
       width: 60px;
     }
-  
+    .nav-links .logout {
+      display: none !important;
+    }
+    .nav-links .mobile-view{
+      display: block !important;
+    }
+
+    .logout-btn:hover{
+      background: rgb(255, 255, 255);
+      color: #002D46;
+    }
+
     nav {
       height: 75px;
     }

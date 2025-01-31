@@ -43,10 +43,6 @@ export class QueriesComponent implements OnInit {
     );
   }
 
-  // closeModal() {
-  //   this.isVisible = false;
-  // }
-
   closeModal(): void {
     this.close.emit();  // Emit the close event to the parent component
   }
@@ -101,6 +97,7 @@ export class QueriesComponent implements OnInit {
         this.email = '';
         this.selectedProgram = '';
         this.query = '';
+        this.closeModal();
       },
       error: (err) => {
         Swal.fire({

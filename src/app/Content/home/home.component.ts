@@ -13,13 +13,22 @@ import { link } from 'fs';
   imports: [CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  host: {
+    '[attr.ngSkipHydration]': 'true'  // Skip hydration for the component
+  }
 })
 export class HomeComponent {
   isClient = false;
   jobs: any[] = [];
+  newsImages: any = [];
+  reviews : any = [];
   displayedJobs: any[] = [];
   currentIndex: number = 3; 
+
+  candidatesPlaced: number = 0;
+  globalEmployers: number = 0;
+  visaSuccessRate: number = 0;
 
   constructor(private router: Router,
     private route: ActivatedRoute, 
@@ -34,11 +43,31 @@ export class HomeComponent {
   }
 
   ngOnInit() {
-    // Use bracket notation to access dynamic keys in route data
+    
     const routeData = this.route.snapshot.data;
-    this.titleService.setTitle(routeData['title']);  // Use ['title'] to access
-    this.metaService.updateTag({ name: 'description', content: routeData['description'] });  // Use ['description']
+    this.titleService.setTitle(routeData['title']);
+    this.metaService.updateTag({ name: 'description', content: routeData['description'] }); 
+    this.animateNumber(200, 'candidatesPlaced', 3000);
+    this.animateNumber(10, 'globalEmployers', 3000);
+    this.animateNumber(98, 'visaSuccessRate', 3000);
     this.fetchJobs();
+    this.getNewsImages();
+    this.getReviews();
+  }
+
+  animateNumber(finalValue: number, property: 'candidatesPlaced' | 'globalEmployers' | 'visaSuccessRate', duration: number): void {
+    let start = 0;
+    const step = finalValue / (duration / 16); // Approximate frame rate of 60fps
+
+    const interval = setInterval(() => {
+      if (start >= finalValue) {
+        this[property] = finalValue; // Ensure final value is set
+        clearInterval(interval);
+      } else {
+        this[property] = Math.ceil(start);
+        start += step;
+      }
+    }, 10);
   }
 
   services = [
@@ -108,44 +137,6 @@ export class HomeComponent {
     }
   ];
 
-  reviews = [
-    {
-      imageUrl: '/Reviews/Review_1.jpeg',
-      text: 'Spaark Overseas is highly professional and trustworthy. They guided me through the entire process, from documentation to interview preparation.',
-      author: 'Jaspreet Singh',
-    },
-    {
-      imageUrl: '/Reviews/Review_2.jpeg',
-      text: 'Their expertise in the German nursing program is incredible. Spaark Overseas is undoubtedly the best in the business.',
-      author: 'Divya Jain',
-    },
-    {
-      imageUrl: '/Reviews/Review_3.jpeg',
-      text: 'I was skeptical at first, but Spaark Overseas delivered on all their promises. I’m now part of the Ausbildung program in Germany. Thank you',
-      author: 'Abhinav Singh',
-    },
-    {
-      imageUrl: '/Reviews/Review_4.jpeg',
-      text: 'Thanks to Spaark Overseas, I am now working as a physiotherapist in Germany. They are the best placement agency for healthcare professionals.',
-      author: 'Sachin Rao',
-    },
-    {
-      imageUrl: '/Reviews/Review_5.jpeg',
-      text: 'The Ausbildung program through Spaark Overseas has changed my life. They were with me at every step and made the transition to Germany effortless.',
-      author: 'Vivek Gupta',
-    },
-    {
-      imageUrl: '/Reviews/Review_6.jpeg',
-      text: 'I cannot thank Spaark Overseas enough for guiding me through the German Nursing program. The entire process was smooth, and their support was outstanding. Highly recommended!',
-      author: 'Amit Sharma',
-    },
-    {
-      imageUrl: '/Reviews/Review_7.jpeg',
-      text: 'I had a fantastic experience with Spaark Overseas. They are experts in German placements and very supportive.',
-      author: 'Rohit Jain',
-    }
-  ];
-
   navigateTo(route?: string) {
     if (route) {
       this.router.navigate([route]).then(() => {
@@ -160,27 +151,26 @@ export class HomeComponent {
     window.open(link, '_blank');
   }
 
-  galleryImages = [
-    { image_url: "/Gallery/Image_1.jpeg", title: "Image_1" },
-    { image_url: "/Gallery/Image_2.jpeg", title: "Image_2" },
-    { image_url: "/Gallery/Image_3.jpeg", title: "Image_3" },
-    { image_url: "/Gallery/Image_4.jpeg", title: "Image_4" },
-    { image_url: "/Gallery/Image_5.jpeg", title: "Image_5" },
-    { image_url: "/Gallery/Image_6.jpeg", title: "Image_6" },
-    { image_url: "/Gallery/Image_1.jpeg", title: "Image_7" },
-    { image_url: "/Gallery/Image_2.jpeg", title: "Image_8" },
-    { image_url: "/Gallery/Image_3.jpeg", title: "Image_9" },
-    { image_url: "/Gallery/Image_4.jpeg", title: "Image_10" },
-    { image_url: "/Gallery/Image_5.jpeg", title: "Image_11" },
-    { image_url: "/Gallery/Image_6.jpeg", title: "Image_12" },
-    { image_url: "/Gallery/Image_1.jpeg", title: "Image_13" },
-    { image_url: "/Gallery/Image_2.jpeg", title: "Image_14" },
-    { image_url: "/Gallery/Image_3.jpeg", title: "Image_15" },
-    { image_url: "/Gallery/Image_4.jpeg", title: "Image_16" },
-    { image_url: "/Gallery/Image_5.jpeg", title: "Image_17" },
-    { image_url: "/Gallery/Image_6.jpeg", title: "Image_18" },
-    { image_url: "/Gallery/Image_6.jpeg", title: "Image_19" },
-    { image_url: "/Gallery/Image_6.jpeg", title: "Image_20" }
-    ];
+    getNewsImages(): void {
+      this.http.get<any[]>(this.apiservice.images).subscribe({
+        next: (data) => {
+          this.newsImages = data.filter((images) => images.isNews === true);
+        },
+        error: (error) => {
+          console.error('Error fetching jobs:', error);
+        },
+      });
+    }
+
+    getReviews(): void {
+      this.http.get<any[]>(this.apiservice.reviews).subscribe({
+        next: (data) => {
+          this.reviews = data.filter((review) => review.isActive === true);
+        },
+        error: (error) => {
+          console.error('Error fetching reviews:', error);
+        },
+      });
+    }
   
 }

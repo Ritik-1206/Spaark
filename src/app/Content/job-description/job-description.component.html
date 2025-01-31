@@ -2,9 +2,8 @@
     <section 
     class="main-image" 
     [ngClass]="{'custom-image-class': job.imageUrl}" 
-    [ngStyle]="{'background-image': job.imageUrl ? 'url(' + job.imageUrl + ')' : ''}">
+    [ngStyle]="{'background-image': job.imageUrl ? 'url(' + getSafeImageUrl(job.imageUrl) + ')' : ''}">
         <div class="info">
-            
             <h1>{{job.title}}</h1>
         </div>
     </section>
@@ -28,7 +27,7 @@
                             <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Location :</strong>{{job.location}}</li>
                             <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Job Type :</strong>{{job.openings}}</li>
                             <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Qualification :</strong>{{job.qualification}}</li>
-                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Age :</strong>{{job.testExamRequired}}</li>
+                            <li><strong style="font-weight: 500; font-size: 16px; margin-right: 10px">Age :</strong>{{job.age}}</li>
                         </ul>
                     </div>
                 </div>

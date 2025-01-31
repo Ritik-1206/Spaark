@@ -85,7 +85,7 @@
             <ng-container *ngFor="let image of galleryImages">
                 <swiper-slide >
                     <div class="image-card">
-                        <img [src]="image.image_url" [alt]="image.title">
+                        <img [src]="image.filePath" alt="Gallery Images">
                     </div>
                 </swiper-slide>
             </ng-container>
@@ -111,9 +111,11 @@
         </div>
         <div class="spark-images-container">
             <div class="card" *ngFor="let employee of employees">
+                <a [href]="employee.linkedIn" target="_blank"><img class="employee-profile" src="/icons/linkedin-2.png" alt="LinkedIn"/></a>
                 <img [src]="employee.image" [alt]="employee.name" class="spaark-image" />
                 <span class="employee-name">{{ employee.name }}</span>
                 <span>{{employee.profile}}</span>
+                
               </div>
         </div>
     </section>

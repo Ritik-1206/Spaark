@@ -17,6 +17,8 @@ export class ContactusComponent {
 
   fileToUpload: File | null = null;
   fileName: string = "";
+  programs: any[] = [];
+  selectedProgram: string = '';
 
   constructor(private route: ActivatedRoute, private titleService: Title, private metaService: Meta, private http: HttpClient , private apiservice: ApiserviceService) {}
 
@@ -24,6 +26,7 @@ export class ContactusComponent {
     const routeData = this.route.snapshot.data;
     this.titleService.setTitle(routeData['title']);
     this.metaService.updateTag({ name: 'description', content: routeData['description'] });  // Use ['description']
+    this.fetchPrograms();
   }
 
   cvData: File | null = null;
@@ -34,6 +37,17 @@ export class ContactusComponent {
       this.fileToUpload = event.target.files[0];
       this.fileName = this.fileToUpload?.name || '';
     }
+  }
+
+  fetchPrograms(): void {
+    this.http.get<any[]>(this.apiservice.jobApi).subscribe(
+      (response) => {
+        this.programs = response; // Assuming the response is an array of programs
+      },
+      (error) => {
+        console.error('Error fetching programs', error);
+      }
+    );
   }
 
   onSubmit(form: any) {
@@ -52,6 +66,7 @@ export class ContactusComponent {
       formData.append('City', form.value.city);
       formData.append('State', form.value.state);
       formData.append('Country', form.value.country);
+      formData.append('JobProgram', form.value.job);
   
       if (this.fileToUpload) {
         formData.append('files', this.fileToUpload);

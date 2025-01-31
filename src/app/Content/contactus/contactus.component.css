@@ -63,6 +63,17 @@
   .submit-btn:hover {
     background-color: #003358;
   }
+
+  select {
+    width: 102%;
+    padding: 6px;
+    font-size: 16px;
+    background-color: #fff !important;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
   
   .contact-section {
     flex: 1;

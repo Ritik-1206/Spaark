@@ -3,10 +3,11 @@ import { Component, ElementRef, HostListener, ViewChild, OnInit } from '@angular
 import { Router, NavigationEnd, Event as RouterEvent } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { filter } from 'rxjs/operators';
+import { CreateUserComponent } from '../Admin/create-user/create-user.component';
 
 @Component({
   selector: 'app-admin-navbar',
-  imports: [CommonModule , TranslateModule],
+  imports: [CommonModule , TranslateModule , CreateUserComponent],
   templateUrl: './admin-navbar.component.html',
   styleUrl: './admin-navbar.component.css'
 })
@@ -16,6 +17,12 @@ export class AdminNavbarComponent {
   activeItem: string = 'joblist'; // Default active item
 
   constructor(private eRef: ElementRef, private router: Router) {}
+
+  isDropdownOpen: boolean = false;
+
+  toggleDropdown(): void {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
 
   // Handle document click to close menu if clicked outside
   @HostListener('document:click', ['$event'])
@@ -71,8 +78,8 @@ export class AdminNavbarComponent {
       this.activeItem = 'gallery-images';
     } else if (route.includes('admin/news-articles')) {
       this.activeItem = 'news-articles';
-    } else if (route.includes('privacy&policy')) {
-      this.activeItem = 'privacy&policy';
+    } else if (route.includes('admin/manage-reviews')) {
+      this.activeItem = 'manage-reviews';
     } else if (route.includes('why-germany')) {
       this.activeItem = 'why-germany';
     } else if (route.includes('contact-us')) {
@@ -96,5 +103,19 @@ export class AdminNavbarComponent {
       this.activeItem === 'contact-us' || 
       this.activeItem === 'more'
     );
+  }
+
+  logout(): void {
+    this.router.navigate(['login'])
+  }
+
+  isCreateUserModalOpen: boolean = false;
+
+  openCreateUserModal(): void {
+    this.isCreateUserModalOpen = true;
+  }
+
+  closeCreateUserModal(): void {
+    this.isCreateUserModalOpen = false;
   }
 }

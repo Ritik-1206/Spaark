@@ -257,7 +257,8 @@
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     text-align: center;
     width: calc(25% - 26px); 
-    padding: 50px 0px;
+    padding: 30px 0px;
+    padding-top: 0px;
     max-width: 300px;       
     display: flex;
     flex-direction: column;
@@ -270,8 +271,19 @@
     height: auto;
     margin-bottom: 26px;
     border-radius: 50%;
+    border: 2px solid #3965b3;
+    padding: 5px;
   }
   
+  .employee-profile {
+    margin-right: 15px;
+    position: relative;
+    top: 10px;
+    right: -100px;
+    width: 70px;
+  }
+  
+
   .employee-name {
     font-size: 16px;
     font-weight: bold;
@@ -344,6 +356,8 @@ swiper-container::part(pagination-bullet) {
 swiper-container::part(pagination-bullet-active) {
   background-color: #0b2c4d;
 }
+
+
 
   
   @media screen and (max-width:1200px) {
