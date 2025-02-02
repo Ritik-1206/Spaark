@@ -408,6 +408,8 @@ swiper-container::part(pagination-bullet-active) {
   text-align: center;       
 }
 
+
+
 .review-card{
   background-color: #fff;
   border-radius: 10px;

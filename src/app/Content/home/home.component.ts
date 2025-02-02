@@ -103,11 +103,15 @@ export class HomeComponent {
 
 
   navigateToJobDescription(jobId: number): void {
-    this.router.navigate(['/jobs/job-description', jobId]);
+    this.router.navigate(['/jobs/job-description', jobId]).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 
   navigateToInternDescription(jobId: number): void {
-    this.router.navigate(['/internships/internship-description', jobId]);
+    this.router.navigate(['/internships/internship-description', jobId]).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 
   social_media = [

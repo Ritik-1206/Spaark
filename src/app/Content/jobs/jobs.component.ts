@@ -65,7 +65,9 @@ export class JobsComponent implements OnInit {
   }
 
   navigateToJobDescription(jobId: number): void {
-    this.router.navigate(['/jobs/job-description', jobId]);
+    this.router.navigate(['/jobs/job-description', jobId]).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 }
 

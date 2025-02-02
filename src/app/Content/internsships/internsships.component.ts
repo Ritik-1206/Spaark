@@ -71,6 +71,8 @@ export class InternsshipsComponent implements OnInit {
   }
 
   navigateToJobDescription(jobId: number): void {
-    this.router.navigate(['/internships/internship-description', jobId]);
+    this.router.navigate(['/internships/internship-description', jobId]).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 }
